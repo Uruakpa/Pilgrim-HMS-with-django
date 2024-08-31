@@ -16,19 +16,159 @@ from room.models import *
 from hotel.models import *
 from .forms import *
 
+@login_required(login_url='login')
+def accounts_page(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {'user':user, "role":role}
+    return render(request, path + "hotels.html", context)
+
+@login_required(login_url='login')
+def index_page(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "index.html", context)
+
+@login_required(login_url='login')
+def transaction_page(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "transaction.html", context)
+
+
+@login_required(login_url='login')
+def room_booking_list(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "room-booking-list.html", context)
+
+@login_required(login_url='login')
+def checkin_out(request, pk):
+    
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "checkin-out.html", context)
+
+@login_required(login_url='login')
+def room_status(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "room-status.html", context)
+
+@login_required(login_url='login')
+def item_unit_list(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "items-unit-list.html", context)
+
+@login_required(login_url='login')
+def item_list(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "items-list.html", context)
+
+@login_required(login_url='login')
+def item_destroyed_list(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "items-destroyed-list.html", context)
+
+@login_required(login_url='login')
+def item_category_list(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "items-category-list.html", context)
+
+@login_required(login_url='login')
+def item_suppliers_list(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "items-suppliers-list.html", context)
+
+@login_required(login_url='login')
+def booking_report(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "booking-report.html", context)
+
+@login_required(login_url='login')
+def purchase_report(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "purchase-report.html", context)
+
+@login_required(login_url='login')
+def stuck_report(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "stock-report.html", context)
+
+
 
 @login_required(login_url='login')
 def home(request):
+    
     if request.user.groups.exists():
         role = str(request.user.groups.all()[0])
     else:
         return HttpResponseForbidden("lolllzzzzz")
-    if role != "guest":
-        return redirect("employee-profile", pk=request.user.id)
+    if role == "accounts":
+        return redirect("dashboard", pk=request.user.id)
+    elif role  == "front desk":
+        return redirect("front-desk", pk=request.user.id)
     else:
         return redirect("guest-profile", pk=request.user.id)
 
-
+#front desk
+@login_required(login_url='login')
+def front_desk(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"role":role, "user":user}
+    return render(request, path + "desk-room-list.html", context)
 @login_required(login_url='login')
 def events(request):
     role = str(request.user.groups.all()[0])

@@ -62,7 +62,7 @@ ROOT_URLCONF = 'HMS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR, "templates"],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'HMS.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_USER_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
+        # 'USER': os.environ.get('DB_USER'),
+        # 'PASSWORD': os.environ.get('DB_USER_PASSWORD'),
+        # 'HOST': os.environ.get('DB_HOST'),
         # 'PORT'
     }
 }
@@ -130,7 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR, "static"]
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # mail
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

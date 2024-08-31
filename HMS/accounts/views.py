@@ -98,6 +98,7 @@ def add_employee(request):
 
 
 def login_page(request):
+   
     if request.user.is_authenticated:
         return redirect('home')
     else:
@@ -112,6 +113,7 @@ def login_page(request):
                 return redirect('home')
             else:
                 messages.info(request, "Username or Password is incorrect")
+   
 
         context = {}
         return render(request, 'accounts/login.html', context)
