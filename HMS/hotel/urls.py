@@ -3,7 +3,8 @@ from .views import *
 
 
 urlpatterns = [
-    path('', home, name="home"),
+    path('', index, name='index'),
+    path('home/', home, name="home"),
     path('events/', events, name="events"),
     path('announcements/', announcements, name="announcements"),
     path('event-profile/<str:id>/', event_profile, name="event-profile"),
@@ -24,7 +25,8 @@ urlpatterns = [
     path('dashboard/<str:pk>/', index_page, name='dashboard'),
     path('transactions/<str:pk>/', transaction_page, name="transaction"),
     path('room_booking_list/<str:pk>/', room_booking_list, name="room-booking-list"),
-    path('check_in_out/<str:pk>/', checkin_out, name="checkin-out"),
+    path('room_booking/<str:pk>/', room_booking, name="room-booking"),
+    path('check_in_out/<str:pk>/', reservations, name="checkin-out"),
     path('room-status/<str:pk>/', room_status, name="room-status"),
     path('item-unit-list/<str:pk>/', item_unit_list, name="item-unit-list"),
     path('item-list/<str:pk>/', item_list, name="item-list"),
@@ -35,5 +37,5 @@ urlpatterns = [
     path('stock-report/<str:pk>/', stuck_report, name="stock-report"),
     path('purchase-report/<str:pk>/', purchase_report, name="purchase-report"),
     path('frontdesk/<str:pk>/', front_desk, name="front-desk"),
-
+    path('checkin/<int:pk>/', checkin_out, name="checkin"),
 ]
