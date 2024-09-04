@@ -14,4 +14,5 @@ admin.site.register(GuestDetails)
 admin.site.register(ContactDetails)
 admin.site.register(IdentityDetails)
 admin.site.register(ReservationDetails)
+admin.site.register(Payment)
 
