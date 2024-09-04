@@ -3,15 +3,19 @@
     <nav class="navbar navbar-expand-xl py-0">
         <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas_Navbar">
             <div class="offcanvas-header">
-                <span class="fw-bold fs-5 text-gradient">X-Empire</span>
+                <span class="fw-bold fs-5 text-gradient">{{output}}</span>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body flex-column custom_scroll ps-4 ps-xl-0">
                 <div class="d-flex align-items-start mb-4">
                     <img class="avatar lg rounded-circle border border-3" src="/hotel main/pixelwibes.in/templates/hotelair/html/assets/images/profile_av.png" alt="avatar">
                     <div class="ms-3 mt-1">
-                        <h4 class="mb-0 text-gradient title-font">MR Accounts Officer</h4>
-                        <span class="text-muted">Accounts</span>
+                        <h4 class="mb-0 text-gradient title-font">
+                            {{output}} {{user.last_name}}
+                        </h4>
+                        <span class="text-muted">
+                            {{role|capfirst}}
+                        </span>
                     </div>
                 </div>
                 <!-- start: Menu tab -->

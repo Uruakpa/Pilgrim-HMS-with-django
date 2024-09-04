@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseForbidden
 from django.db.models import Q, Count
@@ -15,23 +15,53 @@ from accounts.models import *
 from room.models import *
 from hotel.models import *
 from .forms import *
+from django.core.serializers import serialize
+import json
+from django.utils import timezone
+from django.db.models import Sum
+
+
+
+
+def index(request):
+    return render(request, 'guest/index.html')
 
 @login_required(login_url='login')
 def accounts_page(request, pk):
     role = str(request.user.groups.all()[0])
     path = role + "/"
     
-    user = User.objects.get(id=pk)
-    context = {'user':user, "role":role}
+    user = User.objects.get(id=pk)   
+    
+    context = {'user':user, "role":role,}
     return render(request, path + "hotels.html", context)
 
 @login_required(login_url='login')
 def index_page(request, pk):
     role = str(request.user.groups.all()[0])
     path = role + "/"
+    today = timezone.now().date()
+    total_amount = Payment.objects.filter(date=today).aggregate(total=Sum("amount"))['total']
+    if total_amount is None:
+        total_amount = 0
+    reserve = ReservationDetails.objects.filter(reservation_date=today).count()
+    reservation = ReservationDetails.objects.filter(reservation_date=today).all()
+    total_booking = ReservationDetails.objects.all()
+    # today
+    payment = Payment.objects.all()
+    customers = GuestDetails.objects.all()
     
     user = User.objects.get(id=pk)
-    context = {"user":user, "role":role}
+    context = {
+        "user":user,
+        "role":role,
+        "reserve":reserve,
+        "payment":payment,
+        "customers":customers,
+        "total_booking":total_booking,
+        "reservation":reservation,
+        "total_amount":total_amount
+               }
     return render(request, path + "index.html", context)
 
 @login_required(login_url='login')
@@ -50,26 +80,159 @@ def room_booking_list(request, pk):
     path = role + "/"
     
     user = User.objects.get(id=pk)
-    context = {"user":user, "role":role}
+    reservation = ReservationDetails.objects.all()
+    context = {
+        "user":user,
+        "role":role,
+        "reservation":reservation
+        }
     return render(request, path + "room-booking-list.html", context)
 
 @login_required(login_url='login')
-def checkin_out(request, pk):
-    
+def room_booking(request, pk):
     role = str(request.user.groups.all()[0])
     path = role + "/"
     
     user = User.objects.get(id=pk)
-    context = {"user":user, "role":role}
-    return render(request, path + "checkin-out.html", context)
+    roomtypes = RoomType.objects.all()
+    rooms = list(Rooms.objects.values())
+    guest_details_instance = GuestDetails()
+    contact_details_instance =ContactDetails()
+    identity_details_instance = IdentityDetails()
+    payment_instance = Payment()
+    if request.method == "POST":
+        fcheckin = request.POST.get('checkin')
+        fcheckout = request.POST.get('checkout')
+        farrivalfrom = request.POST.get('arrivalfrom')
+        fpurpose = request.POST.get('purpose')
+        fremarks = request.POST.get('remarks')
+        froomtypeid = request.POST.get('roomtype')
+        froomnum = request.POST.get('roomnum')
+        fadults = request.POST.get('adults')
+        fchildren = request.POST.get('children')
+        fnumber = request.POST.get('number')
+        ftitle = request.POST.get('title')
+        fname = request.POST.get('fname')
+        flname = request.POST.get('flname')
+        foccupation = request.POST.get('occupation')
+        fgender = request.POST.get('gender')
+        fdob = request.POST.get('dob')
+        fnationality = request.POST.get('nationality')
+        fcon_type = request.POST.get('con_type')
+        femail = request.POST.get('email')
+        fcountry = request.POST.get('country')
+        fstate = request.POST.get('state')
+        fcity = request.POST.get('city')
+        fzipcode = request.POST.get('zipcode')
+        faddress = request.POST.get('address')
+        fidtype = request.POST.get('idtype')
+        fidnumber = request.POST.get('idnumber')
+        fmode = request.POST.get('pmode')
+        fstatus = request.POST.get('pstatus')
+        famount = request.POST.get('pamount')
+        roomtype = get_object_or_404(RoomType, id=froomtypeid)
+        # Fetch the Rooms instance based on the room number
+        room_instance = get_object_or_404(Rooms, room_number=froomnum)
+        
+        reserve =  ReservationDetails(
+            check_in = fcheckin,
+            check_out = fcheckout,
+            arrival_from = farrivalfrom,
+            purpose = fpurpose,
+            remarks = fremarks,
+        )
+        reserve.room = room_instance
+        reserve.save()
+        roomdet = RoomDetails.objects.create(
+            room_type = roomtype,
+            roomNumber = room_instance,
+            adults = fadults,
+            children = fchildren,
+        )
+        roomdet.save()
+        guestdet = GuestDetails(
+            phone_number = fnumber,
+            title = ftitle,
+            first_name = fname,
+            last_name = flname,
+            occupation = foccupation,
+            gender =fgender,
+            dob = fdob,
+            nationality = fnationality,
+          
+        )
+        guestdet.room = room_instance
+        guestdet.save()
+        reserve.guest = guestdet
+        reserve.save()
+        
+        con_det = ContactDetails.objects.create(
+            contact_type = fcon_type,
+            email = femail,
+            country = fcountry,
+            state = fstate,
+            city = fcity,
+            zipcode = fzipcode,
+            address = faddress
+        )
+        con_det.save()
+        id_det = IdentityDetails.objects.create(
+            id_type = fidtype,
+            id_number = fidnumber,
+        )
+        id_det.save()
+        payment = Payment(
+            payment_mode = fmode,
+            payment_status = fstatus,
+            amount= famount
+            
+        )
+        payment.save()
+        # payment
+        return redirect("checkin-out", pk=request.user.id)
+    context = {
+        "user":user,
+        "role":role,
+        "guest_details_instance":guest_details_instance,
+        "roomtypes":roomtypes,
+        "payment_instance":payment_instance,
+        # "payment":payment,
+        "contact_details_instance":contact_details_instance,
+        "identity_details_instance":identity_details_instance,
+        'rooms': json.dumps(rooms),
+        
+        }
+    return render(request, path + "room-booking.html", context)
 
+@login_required(login_url='login')
+def reservations(request, pk):
+    
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    rooms = Rooms.objects.all()
+    reserve = ReservationDetails.objects.all()
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role, "rooms": rooms, "reserve":reserve}
+    # return render(request, path + "checkin-out.html", context)
+    return render(request, path + "reserve.html", context)
+    
+@login_required(login_url='login')
+
+def checkin_out(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    reservation = ReservationDetails.objects.get(id=pk)
+    my_dict = {"reservation":reservation, "role":role}
+    return render(request, path + "checkin-out.html", context=my_dict)
+    
 @login_required(login_url='login')
 def room_status(request, pk):
     role = str(request.user.groups.all()[0])
     path = role + "/"
-    
     user = User.objects.get(id=pk)
-    context = {"user":user, "role":role}
+    context = {"user":user, "role":role, }
     return render(request, path + "room-status.html", context)
 
 @login_required(login_url='login')
@@ -168,7 +331,7 @@ def front_desk(request, pk):
     
     user = User.objects.get(id=pk)
     context = {"role":role, "user":user}
-    return render(request, path + "desk-room-list.html", context)
+    return render(request, path + "index.html", context)
 @login_required(login_url='login')
 def events(request):
     role = str(request.user.groups.all()[0])
