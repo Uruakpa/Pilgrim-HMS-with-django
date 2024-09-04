@@ -18,6 +18,7 @@ from .forms import *
 from django.core.serializers import serialize
 import json
 from django.utils import timezone
+from django.db.models import Sum
 
 
 
@@ -40,12 +41,16 @@ def index_page(request, pk):
     role = str(request.user.groups.all()[0])
     path = role + "/"
     today = timezone.now().date()
+    total_amount = Payment.objects.filter(date=today).aggregate(total=Sum("amount"))['total']
+    if total_amount is None:
+        total_amount = 0
     reserve = ReservationDetails.objects.filter(reservation_date=today).count()
     reservation = ReservationDetails.objects.filter(reservation_date=today).all()
     total_booking = ReservationDetails.objects.all()
     # today
     payment = Payment.objects.all()
     customers = GuestDetails.objects.all()
+    
     user = User.objects.get(id=pk)
     context = {
         "user":user,
@@ -54,7 +59,8 @@ def index_page(request, pk):
         "payment":payment,
         "customers":customers,
         "total_booking":total_booking,
-        "reservation":reservation
+        "reservation":reservation,
+        "total_amount":total_amount
                }
     return render(request, path + "index.html", context)
 
@@ -183,7 +189,7 @@ def room_booking(request, pk):
         )
         payment.save()
         # payment
-        return redirect('checkin-out', user=request.user.id)
+        return redirect("checkin-out", pk=request.user.id)
     context = {
         "user":user,
         "role":role,

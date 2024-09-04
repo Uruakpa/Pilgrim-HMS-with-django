@@ -375,7 +375,7 @@
 											<label class="form-label text-muted">Payment Mode</label>
 											<div class="input-group">
 												<span class="input-group-text"><i class="bi bi-credit-card"></i></span>
-												<select class="form-select">
+												<select class="form-select" name="pmode">
 													<option selected="" value="">Payment Mode</option>
 													{% for key, value in payment_instance.PAYMENT_MODE %}
 													<option value="{{key}}">
@@ -392,7 +392,7 @@
 											<label class="form-label text-muted">Payment Status</label>
 											<div class="input-group">
 												<span class="input-group-text"><i class="bi bi-credit-card"></i></span>
-												<select class="form-select">
+												<select class="form-select" name="pstatus">
 													<option selected="" value="">Payment Status</option>
 													{% for key, value in payment_instance.PAYMENT_STATUS %}
 													<option value="{{key}}">
@@ -404,21 +404,13 @@
 											</div>
 										</div>
 									</div>
-									{% comment %} <div class="col-md-6">
-										<div class="form-group">
-											<label class="form-label text-muted">Advance Remarks</label>
-											<div class="input-group">
-												<span class="input-group-text"><i class="bi bi-card-text"></i></span>
-												<input type="text" class="form-control" placeholder="Remarks">
-											</div>
-										</div>
-									</div> {% endcomment %}
+									
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="form-label text-muted">Advance Amount</label>
 											<div class="input-group">
 												<span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
-												<input type="text" class="form-control" placeholder="Advance Amount">
+												<input type="text" class="form-control" placeholder="Advance Amount" name="pamount">
 											</div>
 										</div>
 									</div>
