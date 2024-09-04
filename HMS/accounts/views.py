@@ -98,6 +98,7 @@ def add_employee(request):
 
 
 def login_page(request):
+   
     if request.user.is_authenticated:
         return redirect('home')
     else:
@@ -112,6 +113,7 @@ def login_page(request):
                 return redirect('home')
             else:
                 messages.info(request, "Username or Password is incorrect")
+   
 
         context = {}
         return render(request, 'accounts/login.html', context)
@@ -119,7 +121,7 @@ def login_page(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('login')
+    return redirect('index')
 
 
 @login_required(login_url='login')
@@ -400,7 +402,7 @@ def guest_profile(request, pk):
         "eventAttendees": eventAttendees,
         "bookings": bookings
     }
-    return render(request, path + "guest-profile.html", context)
+    return render(request, path + "index.html", context)
 
 
 @login_required(login_url='login')
