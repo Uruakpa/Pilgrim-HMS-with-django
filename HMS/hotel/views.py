@@ -40,6 +40,7 @@ def accounts_page(request, pk):
 def index_page(request, pk):
     role = str(request.user.groups.all()[0])
     path = role + "/"
+    print(f'{role} rrrrrrrrrrrrrrrrrr')
     today = timezone.now().date()
     total_amount = Payment.objects.filter(date=today).aggregate(total=Sum("amount"))['total']
     if total_amount is None:
@@ -188,6 +189,8 @@ def room_booking(request, pk):
             
         )
         payment.save()
+        reserve.payment_det = payment
+        reserve.save()
         # payment
         return redirect("checkin-out", pk=request.user.id)
     context = {
@@ -322,17 +325,7 @@ def home(request):
         return redirect("guest-profile", pk=request.user.id) 
     
 #admin
-@login_required(login_url='login')
-def admin_page(request, pk):
-    role = str(request.user.groups.all()[0])
-    path = role + "/"
-    today = timezone.now().date()
-    reserve = ReservationDetails.objects.filter(reservation_date=today).count()
 
-    user = User.objects.get(id=pk)
-    context = {"role":role, "reserve":reserve}
-    return render(request, path + "index_Admin.html", context)
-    
 @login_required(login_url='login')
 def events(request):
     role = str(request.user.groups.all()[0])

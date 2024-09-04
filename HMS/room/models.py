@@ -189,3 +189,12 @@ class ReservationDetails(models.Model):
     
     class Meta:
         ordering = ['-reservation_date', '-date_edited']
+
+    def number_of_days(self):
+        check = (self.check_out - self.check_in).days
+        if check < 1:
+            check = 0
+        return check
+    
+    def total_rent(self):
+        return (self.room.roomPrice * ReservationDetails.number_of_days(self))
