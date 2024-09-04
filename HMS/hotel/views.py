@@ -18,6 +18,8 @@ from .forms import *
 from django.core.serializers import serialize
 import json
 from django.utils import timezone
+from django.db.models import Sum
+
 
 
 
@@ -39,10 +41,27 @@ def index_page(request, pk):
     role = str(request.user.groups.all()[0])
     path = role + "/"
     today = timezone.now().date()
+    total_amount = Payment.objects.filter(date=today).aggregate(total=Sum("amount"))['total']
+    if total_amount is None:
+        total_amount = 0
     reserve = ReservationDetails.objects.filter(reservation_date=today).count()
+    reservation = ReservationDetails.objects.filter(reservation_date=today).all()
+    total_booking = ReservationDetails.objects.all()
+    # today
+    payment = Payment.objects.all()
+    customers = GuestDetails.objects.all()
     
     user = User.objects.get(id=pk)
-    context = {"user":user, "role":role, "reserve":reserve}
+    context = {
+        "user":user,
+        "role":role,
+        "reserve":reserve,
+        "payment":payment,
+        "customers":customers,
+        "total_booking":total_booking,
+        "reservation":reservation,
+        "total_amount":total_amount
+               }
     return render(request, path + "index.html", context)
 
 @login_required(login_url='login')
@@ -61,7 +80,12 @@ def room_booking_list(request, pk):
     path = role + "/"
     
     user = User.objects.get(id=pk)
-    context = {"user":user, "role":role}
+    reservation = ReservationDetails.objects.all()
+    context = {
+        "user":user,
+        "role":role,
+        "reservation":reservation
+        }
     return render(request, path + "room-booking-list.html", context)
 
 @login_required(login_url='login')
@@ -103,6 +127,9 @@ def room_booking(request, pk):
         faddress = request.POST.get('address')
         fidtype = request.POST.get('idtype')
         fidnumber = request.POST.get('idnumber')
+        fmode = request.POST.get('pmode')
+        fstatus = request.POST.get('pstatus')
+        famount = request.POST.get('pamount')
         roomtype = get_object_or_404(RoomType, id=froomtypeid)
         # Fetch the Rooms instance based on the room number
         room_instance = get_object_or_404(Rooms, room_number=froomnum)
@@ -154,13 +181,22 @@ def room_booking(request, pk):
             id_number = fidnumber,
         )
         id_det.save()
-        return redirect(to='checkin-out/')
+        payment = Payment(
+            payment_mode = fmode,
+            payment_status = fstatus,
+            amount= famount
+            
+        )
+        payment.save()
+        # payment
+        return redirect("checkin-out", pk=request.user.id)
     context = {
         "user":user,
         "role":role,
         "guest_details_instance":guest_details_instance,
         "roomtypes":roomtypes,
         "payment_instance":payment_instance,
+        # "payment":payment,
         "contact_details_instance":contact_details_instance,
         "identity_details_instance":identity_details_instance,
         'rooms': json.dumps(rooms),

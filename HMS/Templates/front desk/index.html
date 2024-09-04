@@ -84,7 +84,7 @@ X-Empire - {{role}}  Dashboard
 								<h6 class="card-title mb-0">Today Booking</h6>
 							</div>
 							<div class="card-body">
-								<h2>1,587</h2>
+								<h2>{{reserve}}</h2>
 								<span class="badge bg-primary">+11% </span>
 								<span class="text-muted">From previous period</span>
 							</div>
@@ -96,7 +96,9 @@ X-Empire - {{role}}  Dashboard
 								<h6 class="card-title mb-0">Total Amount</h6>
 							</div>
 							<div class="card-body">
-								<h2>$2,258</h2>
+								<h2>$
+									{{total_amount}}
+								</h2>
 								<span class="badge bg-info">+05% </span>
 								<span class="text-muted">New income</span>
 							</div>
@@ -108,7 +110,9 @@ X-Empire - {{role}}  Dashboard
 								<h6 class="card-title mb-0">Total Customer</h6>
 							</div>
 							<div class="card-body">
-								<h2>2.3k</h2>
+								<h2>
+									{{customers|length}}
+								</h2>
 								<span class="badge bg-warning">+11% </span>
 								<span class="text-muted">From previous period</span>
 							</div>
@@ -120,7 +124,9 @@ X-Empire - {{role}}  Dashboard
 								<h6 class="card-title mb-0">Total Booking</h6>
 							</div>
 							<div class="card-body">
-								<h2>11,5587</h2>
+								<h2>
+									{{total_booking|length}}
+								</h2>
 								<span class="badge bg-success">+21% </span>
 								<span class="text-muted">From previous period</span>
 							</div>
@@ -157,9 +163,10 @@ X-Empire - {{role}}  Dashboard
                                         </tr>
                                     </thead>
                                     <tbody>
+										{% for reservations in reservation %}
                                         <tr>
                                            <td>
-                                               Frank Baker
+                                               {{reservations.guest.first_name}}
                                            </td>
                                            <td>Single</td>
                                            <td>12/03/2024</td>
@@ -168,51 +175,8 @@ X-Empire - {{role}}  Dashboard
                                            <td>$230</td>
                                            <td><span class="badge text-bg-warning">Pending</span></td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                Rya Randall
-                                            </td>
-                                            <td>Deluxe</td>
-											<td>12/03/2024</td>
-											<td>24/03/2024</td>
-                                            <td>0.00</td>
-                                            <td>$430</td>
-                                            <td><span class="badge text-bg-warning">Pending</span></td>
-                                         </tr>
-                                         <tr>
-                                            <td>
-                                                Phil Glover
-                                            </td>
-                                            <td>Studio</td>
-											<td>12/03/2024</td>
-											<td>21/03/2024</td>
-                                            <td>0.00</td>
-                                            <td>$4450</td>
-                                            <td><span class="badge text-bg-warning">Pending</span></td>
-                                         </tr>
-                                         <tr>
-                                            <td>
-                                                Victor Rampling
-                                            </td>
-                                            <td>Junior Suite</td>
-											<td>12/03/2024</td>
-											<td>15/03/2024</td>
-                                            <td>0.00</td>
-                                            <td>$530</td>
-                                            <td><span class="badge text-bg-warning">Pending</span></td>
-                                         </tr>
-                                         <tr>
-                                            <td>
-                                                Sally Graham
-                                            </td>
-                                            <td>Queen</td>
-											<td>12/03/2024</td>
-											<td>17/03/2024</td>
-                                            <td>$1550</td>
-                                            <td>0.00</td>
-                                            <td><span class="badge text-bg-success">Success</span></td>
-                                         </tr>
-                                    </tbody>
+                                        {% endfor %}                                   
+										</tbody>
                                 </table>
                             </div>
                         </div>
