@@ -63,13 +63,55 @@
 
 .box{
     height: inherit;
-    width: 30vw;
+    width: 47%;
     border-radius: 10px;
-    padding: 10px;
-    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
 }
+
+.small{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.IN{
+    background-color: #FFC107;
+}
+.EX{
+    background-color: #555;
+}
+.GR{
+    background-color: #FF6F00;
+}
+
 
 .w{
    
-    height: 22vh;
+    height: 21.5vh;
 }
+
+
+
+
+@media (max-width: 850px) {
+    
+    .box-holder{
+      flex-direction: column;
+       height: fit-content;
+      gap: 5vh;
+
+}
+
+.box{
+
+    width: 100%;
+   height: 60vh;
+  
+}
+
+}
+
