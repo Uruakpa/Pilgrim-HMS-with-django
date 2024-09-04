@@ -1,4 +1,4 @@
-{% load static %}
+g{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -36,10 +36,13 @@
 		{% include "accounts_navbar.html" %}
 		{% elif role == 'front desk' %}
 		{% include "frontdesk_nav.html" %}
+		{% elif role == 'admin' %}
+		{% include "admin_nav.html" %}
 		{% else %}
 		<p>
 			Loozz
 		</p>
+		
 		{% endif %}
 
     {% block content %}

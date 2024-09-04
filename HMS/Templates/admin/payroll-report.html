@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employee-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:52 GMT -->
+  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/payroll-report.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:05 GMT -->
   <head>
-    <title>: X-EMPIRE: Hotel Management Admin Dashboard </title>
+   <title>: X-EMPIRE: Hotel Management Admin Dashboard </title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta
@@ -35,15 +35,18 @@
       href="assets/images/apple-touch-icon.png"
     />
 
-    <!--[ Template main css file ]-->
-    <link rel="stylesheet" href="assets/css/style.min.css" />
-     <link rel="stylesheet" href="assets/css/Admin.css">
-  </head>
+    <link rel="stylesheet" href="assets/css/dataTables.min.css" />
 
-  <body data-theme="theme-Custom" class="svgstroke-a bg-gradient">
+    <!--[ Template main css file ]-->
+   <link rel="stylesheet" href="assets/css/style.min.css">
+	   <link rel="stylesheet" href="assets/css/Admin.css">
+
+</head>
+
+<body data-theme="theme-Custom" class="svgstroke-a bg-gradient"> 
     <main class="container-fluid px-0">
       <!-- start: page menu link -->
-     	<aside class="ps-xl-5 ps-lg-4 ps-3 pe-2 py-3 sidebar sticky-top" data-bs-theme="none">
+    	<aside class="ps-xl-5 ps-lg-4 ps-3 pe-2 py-3 sidebar sticky-top" data-bs-theme="none">
 			<nav class="navbar navbar-expand-xl py-0">
 				<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas_Navbar">
 					<div class="offcanvas-header">
@@ -472,7 +475,7 @@
 
       <div class="content">
         <!-- start: page header -->
-    	<header class="px-xl-5 px-lg-4 px-3 sticky-top" data-bs-theme="none">
+      	<header class="px-xl-5 px-lg-4 px-3 sticky-top" data-bs-theme="none">
 				<div class="d-flex justify-content-between align-items-center py-2 w-100">
 					<div class="d-flex align-items-center pe-4">
 						<button class="btn d-inline-flex d-xl-none border-0 p-0 pe-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_Navbar">
@@ -745,15 +748,12 @@
             <li class="breadcrumb-item">
               <a href="index-hr.html" title="home">Home</a>
             </li>
-            <li class="breadcrumb-item">
-              <a href="employees-all.html" title="Employees">Employee</a>
-            </li>
             <li
               class="breadcrumb-item active"
               aria-current="page"
-              title="Employee Details"
+              title="Report"
             >
-              Profile
+              Report
             </li>
           </ol>
           <ul class="list-unstyled action d-flex align-items-center mb-0">
@@ -882,183 +882,322 @@
         </div>
         <!-- start: page body area -->
         <div class="px-xl-5 px-lg-4 px-3 py-3 page-body">
-          <div class="row g-3">
-            <div class="col-12">
-              <div
-                class="py-3 px-0 d-flex align-items-center justify-content-between border-top"
-              >
-                <h3 class="flex-fill h4 mb-0 mt-sm-0">Employee Profile</h3>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="card p-lg-3">
-                <div
-                  class="card-body d-flex flex-column flex-sm-row text-center text-sm-start"
+          <div class="card bg-transparent border-0">
+            <ul class="nav nav-tabs li_animate fs-5" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link px-lg-4 py-lg-3 active"
+                  data-bs-toggle="tab"
+                  href="#ExpenseReport"
+                  aria-selected="true"
+                  role="tab"
+                  ><i class="bi bi-credit-card"></i> Expense Report</a
                 >
-                  <div class="profile-av text-center">
-                    <img
-                      class="rounded-circle img-thumbnail shadow avatar xxl"
-                      src="assets/images/lg/avatar1.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="flex-grow-1 ms-0 ms-sm-4">
-                    <h5 class="mb-1 mt-2">Luke Short</h5>
-                    <p class="text-muted mb-0">
-                      Master Safe |
-                      <span>Employee Id : <strong>00001</strong></span>
-                    </p>
-                    <p>
-                      Check out our brand new bootstrap admin template! 🚀 The
-                      purpose of lorem ipsum is to create a natural looking
-                      block of text (sentence, paragraph, page, etc.) that
-                      doesn't distract from the layout. A practice not without
-                      controversy.
-                    </p>
-                    <div
-                      class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-sm-start"
-                    >
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Mobile</small>
-                        <div class="fs-6">+1 202-555-0174</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Email</small>
-                        <div class="fs-6">LukeShortn@gmail.com</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Birth Date</small>
-                        <div class="fs-6">19/03/1980</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">City</small>
-                        <div class="fs-6">New york</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link px-lg-4 py-lg-3"
+                  data-bs-toggle="tab"
+                  href="#InvoiceReport"
+                  aria-selected="false"
+                  tabindex="-1"
+                  role="tab"
+                  ><i class="bi bi-journal-text"></i
+                  ><span class="d-none d-sm-inline-flex ps-1"
+                    >Invoice Report</span
+                  ></a
+                >
+              </li>
+            </ul>
+            <div
+              class="tab-content bg-card p-3 border border-top-0 rounded-bottom"
+            >
+              <!--[ Start:: Expense Report ]-->
+              <div
+                class="tab-pane fade show active"
+                id="ExpenseReport"
+                role="tabpanel"
+              >
+                <table
+                  class="table table-hover custom-table my_data_table w-100"
+                >
+                  <thead>
+                    <tr class="text-muted small text-uppercase">
+                      <th>Item</th>
+                      <th>Order By</th>
+                      <th>From</th>
+                      <th>Date</th>
+                      <th>Paid By</th>
+                      <th>Status</th>
+                      <th>Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Lenovo Monitor 24 inch</td>
+                      <td>Kevin Glover</td>
+                      <td>Amazon India</td>
+                      <td>16 Dec, 2022</td>
+                      <td>
+                        <img src="assets/images/payment/visa-card.svg" alt="" />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-warning"
+                          >Pending</span
+                        >
+                      </td>
+                      <td>$135</td>
+                    </tr>
+                    <tr>
+                      <td>Mi LED Smart TV 4A 80</td>
+                      <td>Julia Bower</td>
+                      <td>Mi Website</td>
+                      <td>23 Jan, 2023</td>
+                      <td>
+                        <img src="assets/images/payment/visa-card.svg" alt="" />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-success"
+                          >Approved</span
+                        >
+                      </td>
+                      <td>$312</td>
+                    </tr>
+                    <tr>
+                      <td>Airtel DG-HR3400 Router</td>
+                      <td>Sebastian Black</td>
+                      <td>Amazon India</td>
+                      <td>01 Feb, 2023</td>
+                      <td>
+                        <img
+                          src="assets/images/payment/mastercard.svg"
+                          alt=""
+                        />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-success"
+                          >Approved</span
+                        >
+                      </td>
+                      <td>$250</td>
+                    </tr>
+                    <tr>
+                      <td>Lenovo Monitor 24 inch</td>
+                      <td>Kevin Glover</td>
+                      <td>Amazon India</td>
+                      <td>16 Dec, 2022</td>
+                      <td>
+                        <img src="assets/images/payment/visa-card.svg" alt="" />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-warning"
+                          >Pending</span
+                        >
+                      </td>
+                      <td>$135</td>
+                    </tr>
+                    <tr>
+                      <td>Mi LED Smart TV 4A 80</td>
+                      <td>Julia Bower</td>
+                      <td>Mi Website</td>
+                      <td>23 Jan, 2023</td>
+                      <td>
+                        <img src="assets/images/payment/visa-card.svg" alt="" />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-success"
+                          >Approved</span
+                        >
+                      </td>
+                      <td>$312</td>
+                    </tr>
+                    <tr>
+                      <td>Airtel DG-HR3400 Router</td>
+                      <td>Sebastian Black</td>
+                      <td>Amazon India</td>
+                      <td>01 Feb, 2023</td>
+                      <td>
+                        <img
+                          src="assets/images/payment/mastercard.svg"
+                          alt=""
+                        />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-success"
+                          >Approved</span
+                        >
+                      </td>
+                      <td>$250</td>
+                    </tr>
+                    <tr>
+                      <td>Dell 16 inch Laptop Backpack</td>
+                      <td>Kevin James</td>
+                      <td>ebay UK</td>
+                      <td>17 July, 2022</td>
+                      <td>
+                        <img src="assets/images/payment/visa-card.svg" alt="" />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-success"
+                          >Approved</span
+                        >
+                      </td>
+                      <td>$125</td>
+                    </tr>
+                    <tr>
+                      <td>Dell 16 inch Laptop Backpack</td>
+                      <td>Kevin James</td>
+                      <td>ebay UK</td>
+                      <td>17 July, 2022</td>
+                      <td>
+                        <img src="assets/images/payment/visa-card.svg" alt="" />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-success"
+                          >Approved</span
+                        >
+                      </td>
+                      <td>$125</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-            </div>
-            <div class="col-md-12">
-              <div class="row g-3">
-                <div class="col-lg-6 col-md-6">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="mb-0">Personal Informations</h5>
-                      <button
-                        type="button"
-                        class="btn p-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#PersonalInfo"
-                      >
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Nationality</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Indian</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Religion</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Hindu</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Marital Status</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Married</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Passport No.</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">5468953210</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap">
-                          <div class="col-lg-5 col-6">
-                            <span>Emergency Contact</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">7468953210</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="mb-0">Bank information</h5>
-                      <button
-                        type="button"
-                        class="btn p-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#BankInfo"
-                      >
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Bank Name</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Kotak</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Account No.</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">5436874596325486</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>IFSC Code</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Kotak000021</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Pan No</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">ACQPF6584L</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap">
-                          <div class="col-lg-5 col-6">
-                            <span>UPI Id</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">454812kotak@upi</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+              <!--[ Start:: Invoice Report ]-->
+              <div class="tab-pane fade" id="InvoiceReport" role="tabpanel">
+                <table
+                  class="table table-hover custom-table my_data_table w-100"
+                >
+                  <thead>
+                    <tr class="text-muted small text-uppercase">
+                      <th>Invoice Number</th>
+                      <th>Clients</th>
+                      <th>Date</th>
+                      <th>Paid By</th>
+                      <th>Status</th>
+                      <th>Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#LA-0220</td>
+                      <td>iVince Tech Pvt Ltd</td>
+                      <td>17 Nov, 2022</td>
+                      <td>
+                        <img src="assets/images/payment/paypal.svg" alt="" />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-warning"
+                          >Pending</span
+                        >
+                      </td>
+                      <td>$5,205</td>
+                    </tr>
+                    <tr>
+                      <td>#LA-0245</td>
+                      <td>Altra Systems</td>
+                      <td>23 Feb, 2023</td>
+                      <td>
+                        <img src="assets/images/payment/visa-card.svg" alt="" />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-success"
+                          >Approved</span
+                        >
+                      </td>
+                      <td>$2,000</td>
+                    </tr>
+                    <tr>
+                      <td>#LA-0246</td>
+                      <td>Data Core Systems</td>
+                      <td>01 Jan, 2023</td>
+                      <td>
+                        <img src="assets/images/payment/paypal.svg" alt="" />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-success"
+                          >Approved</span
+                        >
+                      </td>
+                      <td>$2,850</td>
+                    </tr>
+                    <tr>
+                      <td>#LA-0312</td>
+                      <td>Vintage solutions</td>
+                      <td>07 May, 2022</td>
+                      <td>
+                        <img
+                          src="assets/images/payment/mastercard.svg"
+                          alt=""
+                        />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-warning"
+                          >Pending</span
+                        >
+                      </td>
+                      <td>$4,280</td>
+                    </tr>
+                    <tr>
+                      <td>#LA-0348</td>
+                      <td>Tritech Solutions Pvt Ltd</td>
+                      <td>25 Aug, 2022</td>
+                      <td>
+                        <img src="assets/images/payment/paypal.svg" alt="" />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-warning"
+                          >Pending</span
+                        >
+                      </td>
+                      <td>$1,025</td>
+                    </tr>
+                    <tr>
+                      <td>#LA-0352</td>
+                      <td>Unit India Systems</td>
+                      <td>15 March, 2023</td>
+                      <td>
+                        <img
+                          src="assets/images/payment/mastercard.svg"
+                          alt=""
+                        />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-success"
+                          >Approved</span
+                        >
+                      </td>
+                      <td>$7,520</td>
+                    </tr>
+                    <tr>
+                      <td>#LA-0353</td>
+                      <td>Megara IT Solutions</td>
+                      <td>08 Jan, 2023</td>
+                      <td>
+                        <img src="assets/images/payment/visa-card.svg" alt="" />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-success"
+                          >Approved</span
+                        >
+                      </td>
+                      <td>$5,320</td>
+                    </tr>
+                    <tr>
+                      <td>#LA-0365</td>
+                      <td>Logind Technologies</td>
+                      <td>25 March, 2022</td>
+                      <td>
+                        <img src="assets/images/payment/visa-card.svg" alt="" />
+                      </td>
+                      <td>
+                        <span class="text-uppercase badge bg-success"
+                          >Approved</span
+                        >
+                      </td>
+                      <td>$1,500</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -1066,157 +1205,6 @@
       </div>
     </main>
 
-    <!-- Personal Informations-->
-    <div class="modal fade" id="PersonalInfo" tabindex="-1" aria-hidden="true">
-      <div
-        class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fw-bold">Personal Informations</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form class="row g-3">
-              <div class="col-6">
-                <label class="form-label text-muted">Nationality</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Indian"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Religion</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Hindu"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Marital Status</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Married"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Passport No</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="5468953210"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Emergency Contact</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="7468953210"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary">
-              Update Details
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bank information-->
-    <div class="modal fade" id="BankInfo" tabindex="-1" aria-hidden="true">
-      <div
-        class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fw-bold" id="edit2Label">
-              Bank information
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form class="row g-3">
-              <div class="col-6">
-                <label class="form-label text-muted">Bank Name</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Kotak"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Account No.</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="5436874596325486"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">IFSC Code</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Kotak000021"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Pan No</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="ACQPF6584L"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">UPI Id</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="454812kotak@upi"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary">
-              Update Details
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- start: template setting, and more. -->
     <div
@@ -1397,10 +1385,24 @@
 
     <!--[ hotelair template vender js ]-->
     <script src="assets/bundles/libscripts.bundle.js"></script>
+    <script src="assets/bundles/dataTables.bundle.js"></script>
 
     <!-- Template page js -->
     <script src="assets/js/main.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".my_data_table").addClass("nowrap").dataTable({
+          responsive: true,
+        });
+        $('a[data-bs-toggle="tab"]').on("shown.bs.tab", function (e) {
+          $($.fn.dataTable.tables(true))
+            .DataTable()
+            .columns.adjust()
+            .responsive.recalc();
+        });
+      });
+    </script>
   </body>
 
-  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employee-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:52 GMT -->
+  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/payroll-report.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:16 GMT -->
 </html>

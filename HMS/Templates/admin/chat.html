@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employee-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:52 GMT -->
+  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/chat.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:23 GMT -->
   <head>
-    <title>: X-EMPIRE: Hotel Management Admin Dashboard </title>
+     <title>: X-EMPIRE: Hotel Management Admin Dashboard </title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta
@@ -43,7 +43,7 @@
   <body data-theme="theme-Custom" class="svgstroke-a bg-gradient">
     <main class="container-fluid px-0">
       <!-- start: page menu link -->
-     	<aside class="ps-xl-5 ps-lg-4 ps-3 pe-2 py-3 sidebar sticky-top" data-bs-theme="none">
+       <aside class="ps-xl-5 ps-lg-4 ps-3 pe-2 py-3 sidebar sticky-top" data-bs-theme="none">
 			<nav class="navbar navbar-expand-xl py-0">
 				<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas_Navbar">
 					<div class="offcanvas-header">
@@ -472,7 +472,7 @@
 
       <div class="content">
         <!-- start: page header -->
-    	<header class="px-xl-5 px-lg-4 px-3 sticky-top" data-bs-theme="none">
+      	<header class="px-xl-5 px-lg-4 px-3 sticky-top" data-bs-theme="none">
 				<div class="d-flex justify-content-between align-items-center py-2 w-100">
 					<div class="d-flex align-items-center pe-4">
 						<button class="btn d-inline-flex d-xl-none border-0 p-0 pe-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_Navbar">
@@ -742,18 +742,14 @@
         <!-- start: page header area -->
         <div class="px-xl-5 px-lg-4 px-3 py-2 page-header">
           <ol class="breadcrumb mb-0 bg-transparent">
-            <li class="breadcrumb-item">
-              <a href="index-hr.html" title="home">Home</a>
+            <li class=" px-3">
+              <a href="tuning.html" title="tuning">Home</a>
             </li>
-            <li class="breadcrumb-item">
-              <a href="employees-all.html" title="Employees">Employee</a>
+            <li class="px-3">
+              <a href="app.html" title="Apps">Apps</a>
             </li>
-            <li
-              class="breadcrumb-item active"
-              aria-current="page"
-              title="Employee Details"
-            >
-              Profile
+            <li class="breadcrumb-item active" aria-current="page" title="Chat">
+              Chat
             </li>
           </ol>
           <ul class="list-unstyled action d-flex align-items-center mb-0">
@@ -882,183 +878,582 @@
         </div>
         <!-- start: page body area -->
         <div class="px-xl-5 px-lg-4 px-3 py-3 page-body">
-          <div class="row g-3">
-            <div class="col-12">
-              <div
-                class="py-3 px-0 d-flex align-items-center justify-content-between border-top"
-              >
-                <h3 class="flex-fill h4 mb-0 mt-sm-0">Employee Profile</h3>
+          <div class="sub-layout d-flex flex-row align-items-stretch">
+            <!--[ Start:: user list ]-->
+            <div
+              class="order-1 overflow-hidden bg-card rounded-3 border sticky-lg-top"
+            >
+              <div class="c-list p-3">
+                <input
+                  type="search"
+                  class="form-control"
+                  placeholder="Search for..."
+                />
               </div>
-            </div>
-            <div class="col-12">
-              <div class="card p-lg-3">
-                <div
-                  class="card-body d-flex flex-column flex-sm-row text-center text-sm-start"
-                >
-                  <div class="profile-av text-center">
+              <ul
+                class="list-group list-group-flush user-list mb-0 custom_scroll ps-2"
+                role="tablist"
+              >
+                <li class="list-group-item b-dashed">
+                  <a href="javascript:void(0);" class="d-flex">
                     <img
-                      class="rounded-circle img-thumbnail shadow avatar xxl"
-                      src="assets/images/lg/avatar1.jpg"
+                      class="avatar rounded-circle"
+                      src="assets/images/xs/avatar1.jpg"
                       alt=""
                     />
-                  </div>
-                  <div class="flex-grow-1 ms-0 ms-sm-4">
-                    <h5 class="mb-1 mt-2">Luke Short</h5>
-                    <p class="text-muted mb-0">
-                      Master Safe |
-                      <span>Employee Id : <strong>00001</strong></span>
-                    </p>
-                    <p>
-                      Check out our brand new bootstrap admin template! 🚀 The
-                      purpose of lorem ipsum is to create a natural looking
-                      block of text (sentence, paragraph, page, etc.) that
-                      doesn't distract from the layout. A practice not without
-                      controversy.
-                    </p>
-                    <div
-                      class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-sm-start"
-                    >
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Mobile</small>
-                        <div class="fs-6">+1 202-555-0174</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Email</small>
-                        <div class="fs-6">LukeShortn@gmail.com</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Birth Date</small>
-                        <div class="fs-6">19/03/1980</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">City</small>
-                        <div class="fs-6">New york</div>
-                      </div>
+                    <div class="flex-fill ms-3">
+                      <h6 class="d-flex justify-content-between mb-0">
+                        <span>Stephen McLean</span>
+                        <small class="msg-time">12:37 PM</small>
+                      </h6>
+                      <span class="text-muted small"
+                        >changed an issue from "In Progress" to</span
+                      >
                     </div>
+                  </a>
+                </li>
+                <li class="list-group-item b-dashed">
+                  <a href="javascript:void(0);" class="d-flex">
+                    <div class="avatar rounded-circle no-thumbnail">FG</div>
+                    <div class="flex-fill ms-3">
+                      <h6 class="d-flex justify-content-between mb-0">
+                        <span>Friends Group</span>
+                        <small class="msg-time">10:45 AM</small>
+                      </h6>
+                      <span class="text-muted small"
+                        >It is a long established fact that a reader will be
+                        distracted</span
+                      >
+                    </div>
+                  </a>
+                </li>
+                <li class="list-group-item b-dashed">
+                  <a href="javascript:void(0);" class="d-flex">
+                    <img
+                      class="avatar rounded-circle"
+                      src="assets/images/xs/avatar3.jpg"
+                      alt=""
+                    />
+                    <div class="flex-fill ms-3">
+                      <h6 class="d-flex justify-content-between mb-0">
+                        <span>Gordon Butler</span>
+                        <small class="msg-time">10:11 AM</small>
+                      </h6>
+                      <span class="text-muted small"
+                        >There are many variations of passages</span
+                      >
+                    </div>
+                  </a>
+                </li>
+                <li class="list-group-item b-dashed">
+                  <a href="javascript:void(0);" class="d-flex active">
+                    <img
+                      class="avatar rounded-circle"
+                      src="assets/images/xs/avatar4.jpg"
+                      alt=""
+                    />
+                    <div class="flex-fill ms-3">
+                      <h6 class="d-flex justify-content-between mb-0">
+                        <span>Barbara Kelly</span>
+                        <small class="msg-time">Sat</small>
+                      </h6>
+                      <span class="text-muted small"
+                        >Contrary to popular belief</span
+                      >
+                    </div>
+                  </a>
+                </li>
+                <li class="list-group-item b-dashed">
+                  <a href="javascript:void(0);" class="d-flex">
+                    <img
+                      class="avatar rounded-circle"
+                      src="assets/images/xs/avatar5.jpg"
+                      alt=""
+                    />
+                    <div class="flex-fill ms-3">
+                      <h6 class="d-flex justify-content-between mb-0">
+                        <span>Robert Hammer</span>
+                        <small class="msg-time">Fri</small>
+                      </h6>
+                      <span class="text-muted small"
+                        >making it over 2000 years old</span
+                      >
+                    </div>
+                  </a>
+                </li>
+                <li class="list-group-item b-dashed">
+                  <a href="javascript:void(0);" class="d-flex">
+                    <img
+                      class="avatar rounded-circle"
+                      src="assets/images/xs/avatar6.jpg"
+                      alt=""
+                    />
+                    <div class="flex-fill ms-3">
+                      <h6 class="d-flex justify-content-between mb-0">
+                        <span>Gordon Butler</span>
+                        <small class="msg-time">Fri</small>
+                      </h6>
+                      <span class="text-muted small"
+                        >There are many variations of passages</span
+                      >
+                    </div>
+                  </a>
+                </li>
+                <li class="list-group-item b-dashed">
+                  <a href="javascript:void(0);" class="d-flex">
+                    <img
+                      class="avatar rounded-circle"
+                      src="assets/images/xs/avatar7.jpg"
+                      alt=""
+                    />
+                    <div class="flex-fill ms-3">
+                      <h6 class="d-flex justify-content-between mb-0">
+                        <span>Rose Rivera</span>
+                        <small class="msg-time">Thu</small>
+                      </h6>
+                      <span class="text-muted small"
+                        >The generated Lorem Ipsum</span
+                      >
+                    </div>
+                  </a>
+                </li>
+                <li class="list-group-item b-dashed">
+                  <a href="javascript:void(0);" class="d-flex">
+                    <img
+                      class="avatar rounded-circle"
+                      src="assets/images/xs/avatar1.jpg"
+                      alt=""
+                    />
+                    <div class="flex-fill ms-3">
+                      <h6 class="d-flex justify-content-between mb-0">
+                        <span>Stephen McLean</span>
+                        <small class="msg-time">Wed</small>
+                      </h6>
+                      <span class="text-muted small"
+                        >changed an issue from "In Progress" to</span
+                      >
+                    </div>
+                  </a>
+                </li>
+                <li class="list-group-item b-dashed">
+                  <a href="javascript:void(0);" class="d-flex">
+                    <div class="avatar rounded-circle no-thumbnail">RH</div>
+                    <div class="flex-fill ms-3">
+                      <h6 class="d-flex justify-content-between mb-0">
+                        <span>Robert Hammer</span>
+                        <small class="msg-time">Wed</small>
+                      </h6>
+                      <span class="text-muted small"
+                        >It is a long established fact that a reader will be
+                        distracted</span
+                      >
+                    </div>
+                  </a>
+                </li>
+                <li class="list-group-item b-dashed">
+                  <a href="javascript:void(0);" class="d-flex">
+                    <img
+                      class="avatar rounded-circle"
+                      src="assets/images/xs/avatar3.jpg"
+                      alt=""
+                    />
+                    <div class="flex-fill ms-3">
+                      <h6 class="d-flex justify-content-between mb-0">
+                        <span>Gordon Butler</span>
+                        <small class="msg-time">13/10/2020</small>
+                      </h6>
+                      <span class="text-muted small"
+                        >There are many variations of passages</span
+                      >
+                    </div>
+                  </a>
+                </li>
+                <li class="list-group-item b-dashed">
+                  <a href="javascript:void(0);" class="d-flex">
+                    <img
+                      class="avatar rounded-circle"
+                      src="assets/images/xs/avatar4.jpg"
+                      alt=""
+                    />
+                    <div class="flex-fill ms-3">
+                      <h6 class="d-flex justify-content-between mb-0">
+                        <span>Barbara Kelly</span>
+                        <small class="msg-time">13/10/2020</small>
+                      </h6>
+                      <span class="text-muted small"
+                        >Contrary to popular belief</span
+                      >
+                    </div>
+                  </a>
+                </li>
+                <li class="list-group-item b-dashed">
+                  <a href="javascript:void(0);" class="d-flex">
+                    <img
+                      class="avatar rounded-circle"
+                      src="assets/images/xs/avatar5.jpg"
+                      alt=""
+                    />
+                    <div class="flex-fill ms-3">
+                      <h6 class="d-flex justify-content-between mb-0">
+                        <span>Robert Hammer</span>
+                        <small class="msg-time">22/10/2020</small>
+                      </h6>
+                      <span class="text-muted small"
+                        >making it over 2000 years old</span
+                      >
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!--[ Start:: details ]-->
+            <div class="order-2 flex-grow-1 ms-lg-4 bg-card border rounded">
+              <div class="action-header px-xl-4">
+                <a
+                  class="d-flex"
+                  href="#group_detail"
+                  data-bs-toggle="offcanvas"
+                  title=""
+                >
+                  <div class="avatar rounded-circle no-thumbnail">FG</div>
+                  <div class="ms-3">
+                    <h6 class="mb-0">Friends Group</h6>
+                    <small class="text-muted">Online</small>
+                  </div>
+                </a>
+                <div class="d-flex align-items-center">
+                  <a
+                    class="gray-5 px-3"
+                    href="javascript:void(0);"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#chat-search"
+                    ><i class="fa fa-search"></i
+                  ></a>
+                  <a
+                    class="gray-5 px-3 d-none d-lg-block"
+                    href="javascript:void(0);"
+                    data-bs-toggle="modal"
+                    data-bs-target="#video_call"
+                    ><i class="fa fa-video-camera"></i
+                  ></a>
+                  <a
+                    class="gray-5 px-3 d-none d-lg-block"
+                    href="javascript:void(0);"
+                    ><i class="fa fa-gear"></i
+                  ></a>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-danger close-toggle ms-4"
+                  >
+                    <i class="fe fe-settings mr-2"></i>Close
+                  </button>
+                </div>
+              </div>
+              <div class="collapse bg-body py-2" id="chat-search">
+                <div class="input-group px-lg-4 px-3">
+                  <input
+                    type="search"
+                    class="form-control border-0"
+                    placeholder="Search. Components, Layouts, etc..."
+                  />
+                  <div class="input-group-append ms-3">
+                    <button class="btn btn-primary" type="submit">
+                      Search
+                    </button>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-12">
-              <div class="row g-3">
-                <div class="col-lg-6 col-md-6">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="mb-0">Personal Informations</h5>
-                      <button
-                        type="button"
-                        class="btn p-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#PersonalInfo"
-                      >
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
+              <div class="action-body custom_scroll px-xl-4">
+                <ul class="list-unstyled mb-0">
+                  <!--[ Chat: left ]-->
+                  <li class="mb-4 d-flex flex-row align-items-end">
+                    <div class="max-width-70">
+                      <div class="user-info mb-1">
+                        <img
+                          class="avatar xs rounded-circle me-1"
+                          src="assets/images/xs/avatar2.jpg"
+                          alt="avatar"
+                        />
+                        <span class="text-muted small">10:10 AM, Today</span>
+                      </div>
+                      <div class="bg-info bg-opacity-10 p-2 rounded">
+                        <div class="message">Are we meeting today?</div>
+                      </div>
                     </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Nationality</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Indian</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Religion</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Hindu</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Marital Status</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Married</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Passport No.</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">5468953210</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap">
-                          <div class="col-lg-5 col-6">
-                            <span>Emergency Contact</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">7468953210</span>
-                          </div>
-                        </li>
+                    <!--[ More option ]-->
+                    <div class="dropdown">
+                      <a
+                        href="#"
+                        class="nav-link py-2 px-3 text-muted"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        ><i class="fa fa-ellipsis-v"></i
+                      ></a>
+                      <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Share</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
                       </ul>
                     </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="mb-0">Bank information</h5>
-                      <button
-                        type="button"
-                        class="btn p-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#BankInfo"
-                      >
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
+                  </li>
+                  <!--[ Chat: left ]-->
+                  <li class="mb-4 d-flex flex-row align-items-end">
+                    <div class="max-width-70">
+                      <div class="user-info mb-1">
+                        <img
+                          class="avatar xs rounded-circle me-1"
+                          src="assets/images/xs/avatar6.jpg"
+                          alt="avatar"
+                        />
+                        <span class="text-muted small">10:10 AM, Today</span>
+                      </div>
+                      <div class="bg-info bg-opacity-10 p-2 rounded">
+                        <div class="message">
+                          Hi Aiden, how are you? How is the project coming
+                          along?
+                        </div>
+                      </div>
+                      <div class="bg-info bg-opacity-10 p-2 mt-1 rounded">
+                        <div class="message">Are we meeting today?</div>
+                      </div>
                     </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Bank Name</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Kotak</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Account No.</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">5436874596325486</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>IFSC Code</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Kotak000021</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Pan No</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">ACQPF6584L</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap">
-                          <div class="col-lg-5 col-6">
-                            <span>UPI Id</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">454812kotak@upi</span>
-                          </div>
-                        </li>
+                    <!--[ More option ]-->
+                    <div class="dropdown">
+                      <a
+                        href="#"
+                        class="nav-link py-2 px-3 text-muted"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        ><i class="fa fa-ellipsis-v"></i
+                      ></a>
+                      <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Share</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
                       </ul>
                     </div>
-                  </div>
+                  </li>
+                  <!--[ Chat: right ]-->
+                  <li class="mb-4 d-flex flex-row-reverse align-items-end">
+                    <div class="max-width-70 text-end">
+                      <div class="user-info mb-1">
+                        <span class="text-muted small">10:12 AM, Today</span>
+                      </div>
+                      <div class="p-2 bg-body rounded">
+                        <div class="message">
+                          Project has been already finished and I have results
+                          to show you.
+                        </div>
+                      </div>
+                    </div>
+                    <!--[ More option ]-->
+                    <div class="dropdown">
+                      <a
+                        href="#"
+                        class="nav-link py-2 px-3 text-muted"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        ><i class="fa fa-ellipsis-v"></i
+                      ></a>
+                      <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Share</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!--[ Chat: left ]-->
+                  <li class="mb-4 d-flex flex-row align-items-end">
+                    <div class="max-width-70">
+                      <div class="user-info mb-1">
+                        <img
+                          class="avatar xs rounded-circle me-1"
+                          src="assets/images/xs/avatar3.jpg"
+                          alt="avatar"
+                        />
+                        <span class="text-muted small">10:10 AM, Today</span>
+                      </div>
+                      <div class="bg-danger bg-opacity-10 p-2 rounded">
+                        <div class="message">
+                          It is a long established fact that a reader will be
+                          distracted by the readable content of a page when
+                          looking at its layout.
+                        </div>
+                      </div>
+                    </div>
+                    <!--[ More option ]-->
+                    <div class="dropdown">
+                      <a
+                        href="#"
+                        class="nav-link py-2 px-3 text-muted"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        ><i class="fa fa-ellipsis-v"></i
+                      ></a>
+                      <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Share</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!--[ Chat: left ]-->
+                  <li class="mb-4 d-flex flex-row align-items-end">
+                    <div class="max-width-70">
+                      <div class="user-info mb-1">
+                        <img
+                          class="avatar xs rounded-circle me-1"
+                          src="assets/images/xs/avatar4.jpg"
+                          alt="avatar"
+                        />
+                        <span class="text-muted small">10:10 AM, Today</span>
+                      </div>
+                      <div class="bg-warning bg-opacity-10 p-2 rounded">
+                        <div class="message">
+                          Contrary to popular belief, Lorem Ipsum is not simply
+                          random text.
+                        </div>
+                      </div>
+                    </div>
+                    <!--[ More option ]-->
+                    <div class="dropdown">
+                      <a
+                        href="#"
+                        class="nav-link py-2 px-3 text-muted"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        ><i class="fa fa-ellipsis-v"></i
+                      ></a>
+                      <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Share</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!--[ Chat: right ]-->
+                  <li class="mb-4 d-flex flex-row-reverse align-items-end">
+                    <div class="max-width-70 text-end">
+                      <div class="user-info mb-1">
+                        <span class="text-muted small">10:12 AM, Today</span>
+                      </div>
+                      <div class="p-2 bg-body rounded">
+                        <div class="message">
+                          Yes, Orlando Allredy done <br />
+                          There are many variations of passages of Lorem Ipsum
+                          available
+                        </div>
+                      </div>
+                    </div>
+                    <!--[ More option ]-->
+                    <div class="dropdown">
+                      <a
+                        href="#"
+                        class="nav-link py-2 px-3 text-muted"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        ><i class="fa fa-ellipsis-v"></i
+                      ></a>
+                      <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Share</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!--[ Chat: left ]-->
+                  <li class="mb-4 d-flex flex-row align-items-end">
+                    <div class="max-width-70">
+                      <div class="user-info mb-1">
+                        <img
+                          class="avatar xs rounded-circle me-1"
+                          src="assets/images/xs/avatar1.jpg"
+                          alt="avatar"
+                        />
+                        <span class="text-muted small">10:10 AM, Today</span>
+                      </div>
+                      <div class="bg-success bg-opacity-10 p-2 rounded">
+                        <div class="message">
+                          <p>Please find attached images</p>
+                          <img
+                            class="img-thumbnail"
+                            src="assets/images/gallery/16.jpg"
+                            alt=""
+                            style="width: 100px"
+                          />
+                          <img
+                            class="img-thumbnail"
+                            src="assets/images/gallery/17.jpg"
+                            alt=""
+                            style="width: 100px"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <!--[ More option ]-->
+                    <div class="dropdown">
+                      <a
+                        href="#"
+                        class="nav-link py-2 px-3 text-muted"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        ><i class="fa fa-ellipsis-v"></i
+                      ></a>
+                      <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Share</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <!--[ Chat: right ]-->
+                  <li class="mb-4 d-flex flex-row-reverse align-items-end">
+                    <div class="max-width-70 text-end">
+                      <div class="user-info mb-1">
+                        <span class="text-muted small">10:12 AM, Today</span>
+                      </div>
+                      <div class="p-2 bg-body rounded">
+                        <div class="message">
+                          Okay, will check and let you know.
+                        </div>
+                      </div>
+                    </div>
+                    <!--[ More option ]-->
+                    <div class="dropdown">
+                      <a
+                        href="#"
+                        class="nav-link py-2 px-3 text-muted"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        ><i class="fa fa-ellipsis-v"></i
+                      ></a>
+                      <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="#">Edit</a></li>
+                        <li><a class="dropdown-item" href="#">Share</a></li>
+                        <li><a class="dropdown-item" href="#">Delete</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="action-footer chat-msg d-flex px-xl-4">
+                <div class="btn btn-link file-input">
+                  <input
+                    type="file"
+                    class="form-control"
+                    name="file-input"
+                    id="file-input"
+                  />
+                  <label for="file-input" class="fa fa-paperclip"></label>
                 </div>
+                <input
+                  type="text"
+                  class="form-control bg-transparent border-0"
+                  placeholder="Enter text here..."
+                />
+                <button class="btn btn-dark text-uppercase" type="button">
+                  Send
+                </button>
               </div>
             </div>
           </div>
@@ -1066,157 +1461,7 @@
       </div>
     </main>
 
-    <!-- Personal Informations-->
-    <div class="modal fade" id="PersonalInfo" tabindex="-1" aria-hidden="true">
-      <div
-        class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fw-bold">Personal Informations</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form class="row g-3">
-              <div class="col-6">
-                <label class="form-label text-muted">Nationality</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Indian"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Religion</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Hindu"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Marital Status</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Married"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Passport No</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="5468953210"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Emergency Contact</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="7468953210"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary">
-              Update Details
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bank information-->
-    <div class="modal fade" id="BankInfo" tabindex="-1" aria-hidden="true">
-      <div
-        class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fw-bold" id="edit2Label">
-              Bank information
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form class="row g-3">
-              <div class="col-6">
-                <label class="form-label text-muted">Bank Name</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Kotak"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Account No.</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="5436874596325486"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">IFSC Code</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Kotak000021"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Pan No</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="ACQPF6584L"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">UPI Id</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="454812kotak@upi"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary">
-              Update Details
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+						
 
     <!-- start: template setting, and more. -->
     <div
@@ -1400,7 +1645,15 @@
 
     <!-- Template page js -->
     <script src="assets/js/main.js"></script>
+    <script>
+      $(".sub-layout .user-list a").on("click", function () {
+        $(".sub-layout .order-2").toggleClass("open");
+      });
+      $(".close-toggle").on("click", function () {
+        $(".sub-layout .order-2").toggleClass("open");
+      });
+    </script>
   </body>
 
-  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employee-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:52 GMT -->
+  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/chat.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:23 GMT -->
 </html>

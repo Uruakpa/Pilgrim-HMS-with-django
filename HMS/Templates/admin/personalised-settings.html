@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employee-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:52 GMT -->
+  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/personalised-settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:31:46 GMT -->
   <head>
-    <title>: X-EMPIRE: Hotel Management Admin Dashboard </title>
+   <title>: X-EMPIRE: Hotel Management Admin Dashboard </title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta
@@ -35,12 +35,15 @@
       href="assets/images/apple-touch-icon.png"
     />
 
-    <!--[ Template main css file ]-->
-    <link rel="stylesheet" href="assets/css/style.min.css" />
-     <link rel="stylesheet" href="assets/css/Admin.css">
-  </head>
+    <link rel="stylesheet" href="assets/vendor/dataTables.min.css" />
 
-  <body data-theme="theme-Custom" class="svgstroke-a bg-gradient">
+    <!--[ Template main css file ]-->
+   <link rel="stylesheet" href="assets/css/style.min.css">
+	   <link rel="stylesheet" href="assets/css/Admin.css">
+
+</head>
+
+<body data-theme="theme-Custom" class="svgstroke-a bg-gradient"> 
     <main class="container-fluid px-0">
       <!-- start: page menu link -->
      	<aside class="ps-xl-5 ps-lg-4 ps-3 pe-2 py-3 sidebar sticky-top" data-bs-theme="none">
@@ -469,10 +472,9 @@
 			</nav>
 		</aside>
 
-
       <div class="content">
         <!-- start: page header -->
-    	<header class="px-xl-5 px-lg-4 px-3 sticky-top" data-bs-theme="none">
+   	<header class="px-xl-5 px-lg-4 px-3 sticky-top" data-bs-theme="none">
 				<div class="d-flex justify-content-between align-items-center py-2 w-100">
 					<div class="d-flex align-items-center pe-4">
 						<button class="btn d-inline-flex d-xl-none border-0 p-0 pe-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_Navbar">
@@ -740,20 +742,18 @@
 				</div>
 			</header>
         <!-- start: page header area -->
-        <div class="px-xl-5 px-lg-4 px-3 py-2 page-header">
-          <ol class="breadcrumb mb-0 bg-transparent">
+       	<div class="px-xl-5 px-lg-4 px-3 py-2 page-header">
+				<ol class="breadcrumb mb-0 bg-transparent">
+					<li class="px-3"><a href="index(Admin).html" title="home">Home</a></li>
             <li class="breadcrumb-item">
-              <a href="index-hr.html" title="home">Home</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="employees-all.html" title="Employees">Employee</a>
+              <a href="personalised.html" title="Personalised">Personalised</a>
             </li>
             <li
               class="breadcrumb-item active"
               aria-current="page"
-              title="Employee Details"
+              title="personalised-settings"
             >
-              Profile
+              Personalised-settings
             </li>
           </ol>
           <ul class="list-unstyled action d-flex align-items-center mb-0">
@@ -883,340 +883,286 @@
         <!-- start: page body area -->
         <div class="px-xl-5 px-lg-4 px-3 py-3 page-body">
           <div class="row g-3">
-            <div class="col-12">
+            <div class="col-sm-12">
               <div
-                class="py-3 px-0 d-flex align-items-center justify-content-between border-top"
+                class="d-flex align-items-center justify-content-between flex-wrap"
               >
-                <h3 class="flex-fill h4 mb-0 mt-sm-0">Employee Profile</h3>
+                <h3 class="fw-bold mb-0">Personalised Settings</h3>
               </div>
             </div>
-            <div class="col-12">
-              <div class="card p-lg-3">
-                <div
-                  class="card-body d-flex flex-column flex-sm-row text-center text-sm-start"
-                >
-                  <div class="profile-av text-center">
-                    <img
-                      class="rounded-circle img-thumbnail shadow avatar xxl"
-                      src="assets/images/lg/avatar1.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="flex-grow-1 ms-0 ms-sm-4">
-                    <h5 class="mb-1 mt-2">Luke Short</h5>
-                    <p class="text-muted mb-0">
-                      Master Safe |
-                      <span>Employee Id : <strong>00001</strong></span>
-                    </p>
-                    <p>
-                      Check out our brand new bootstrap admin template! 🚀 The
-                      purpose of lorem ipsum is to create a natural looking
-                      block of text (sentence, paragraph, page, etc.) that
-                      doesn't distract from the layout. A practice not without
-                      controversy.
-                    </p>
-                    <div
-                      class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-sm-start"
-                    >
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Mobile</small>
-                        <div class="fs-6">+1 202-555-0174</div>
+            <div class="col-sm-12">
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h6 class="card-title">Personalised Service Add</h6>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label text-muted"
+                            >Service Name</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Add Service Name"
+                          />
+                        </div>
                       </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Email</small>
-                        <div class="fs-6">LukeShortn@gmail.com</div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label text-muted"
+                            >Service Time Slot</label
+                          >
+                          <div class="input-group">
+                            <input type="time" class="form-control" />
+                            <input type="time" class="form-control" />
+                            <button
+                              class="btn btn-outline-secondary"
+                              type="button"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="svg-stroke"
+                                width="24"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              >
+                                <path
+                                  stroke="none"
+                                  d="M0 0h24v24H0z"
+                                  fill="none"
+                                />
+                                <path d="M12 5l0 14" />
+                                <path d="M5 12l14 0" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
                       </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Birth Date</small>
-                        <div class="fs-6">19/03/1980</div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label text-muted"
+                            >Category One</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Add Category"
+                          />
+                        </div>
                       </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">City</small>
-                        <div class="fs-6">New york</div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label text-muted"
+                            >Category Two</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Add Category"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label text-muted"
+                            >Category Three</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Add Category"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-label text-muted d-block"
+                            >Add New</label
+                          >
+                          <button type="button" class="btn btn-primary">
+                            Add Category
+                          </button>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 text-end">
+                        <button type="button" class="btn btn-primary">
+                          Apply
+                        </button>
                       </div>
                     </div>
-                  </div>
+                  </form>
                 </div>
               </div>
-            </div>
-            <div class="col-md-12">
-              <div class="row g-3">
-                <div class="col-lg-6 col-md-6">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="mb-0">Personal Informations</h5>
-                      <button
-                        type="button"
-                        class="btn p-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#PersonalInfo"
-                      >
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Nationality</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Indian</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Religion</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Hindu</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Marital Status</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Married</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Passport No.</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">5468953210</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap">
-                          <div class="col-lg-5 col-6">
-                            <span>Emergency Contact</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">7468953210</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+              <div class="card mb-3">
+                <div class="card-header">
+                  <h6 class="card-title">List Personalised Service</h6>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="mb-0">Bank information</h5>
-                      <button
-                        type="button"
-                        class="btn p-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#BankInfo"
-                      >
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Bank Name</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Kotak</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Account No.</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">5436874596325486</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>IFSC Code</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Kotak000021</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Pan No</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">ACQPF6584L</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap">
-                          <div class="col-lg-5 col-6">
-                            <span>UPI Id</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">454812kotak@upi</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                <div class="card-body">
+                  <table
+                    class="table dataTable align-middle table-hover table-body"
+                    style="width: 100%"
+                  >
+                    <thead>
+                      <tr>
+                        <th>Service Id</th>
+                        <th>Service Name</th>
+                        <th>Category</th>
+                        <th>Time Slot</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>01</td>
+                        <td>Jacuzzi</td>
+                        <td>
+                          <div class="p-1 border">Outdoor Jacuzzi</div>
+                          <div class="p-1 border">Luxury Jacuzzi</div>
+                          <div class="p-1 border">Portable Jacuzzi</div>
+                        </td>
+                        <td>
+                          <div class="p-1 border">10 to 12</div>
+                          <div class="p-1 border">12 to 02</div>
+                          <div class="p-1 border">04 to 06</div>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-service"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>02</td>
+                        <td>Swimming Pool</td>
+                        <td>
+                          <div class="p-1 border">Swimming Lessons</div>
+                          <div class="p-1 border">Water Aerobics</div>
+                          <div class="p-1 border">Competitive Swimming</div>
+                        </td>
+                        <td>
+                          <div class="p-1 border">10 to 12</div>
+                          <div class="p-1 border">12 to 02</div>
+                          <div class="p-1 border">04 to 06</div>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-service"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>03</td>
+                        <td>Spa</td>
+                        <td>
+                          <div class="p-1 border">Massage Therapy</div>
+                          <div class="p-1 border">Facial Treatments</div>
+                          <div class="p-1 border">Aromatherapy</div>
+                        </td>
+                        <td>
+                          <div class="p-1 border">10 to 12</div>
+                          <div class="p-1 border">12 to 02</div>
+                          <div class="p-1 border">04 to 06</div>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-service"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>04</td>
+                        <td>Pedicure</td>
+                        <td>
+                          <div class="p-1 border">Classic Pedicures</div>
+                          <div class="p-1 border">Gel Pedicures</div>
+                          <div class="p-1 border">French Pedicures</div>
+                        </td>
+                        <td>
+                          <div class="p-1 border">10 to 12</div>
+                          <div class="p-1 border">12 to 02</div>
+                          <div class="p-1 border">04 to 06</div>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-service"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>05</td>
+                        <td>Theater</td>
+                        <td>
+                          <div class="p-1 border">Movie</div>
+                          <div class="p-1 border">Match</div>
+                          <div class="p-1 border">Auction</div>
+                        </td>
+                        <td>
+                          <div class="p-1 border">10 to 01</div>
+                          <div class="p-1 border">02 to 05</div>
+                          <div class="p-1 border">06 to 09</div>
+                        </td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-service"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
+          <!-- Row End -->
         </div>
       </div>
     </main>
-
-    <!-- Personal Informations-->
-    <div class="modal fade" id="PersonalInfo" tabindex="-1" aria-hidden="true">
-      <div
-        class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fw-bold">Personal Informations</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form class="row g-3">
-              <div class="col-6">
-                <label class="form-label text-muted">Nationality</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Indian"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Religion</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Hindu"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Marital Status</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Married"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Passport No</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="5468953210"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Emergency Contact</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="7468953210"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary">
-              Update Details
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bank information-->
-    <div class="modal fade" id="BankInfo" tabindex="-1" aria-hidden="true">
-      <div
-        class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fw-bold" id="edit2Label">
-              Bank information
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form class="row g-3">
-              <div class="col-6">
-                <label class="form-label text-muted">Bank Name</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Kotak"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Account No.</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="5436874596325486"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">IFSC Code</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Kotak000021"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Pan No</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="ACQPF6584L"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">UPI Id</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="454812kotak@upi"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary">
-              Update Details
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- start: template setting, and more. -->
     <div
@@ -1395,12 +1341,152 @@
       </div>
     </div>
 
+    <!-- Edit Service -->
+    <div class="modal fade" id="edit-service" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Edit Service</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row">
+                <div class="form-group mb-3 col-6">
+                  <label class="form-label text-muted">Service Name</label>
+                  <input type="text" class="form-control" value="Jacuzzi" />
+                </div>
+                <div class="form-group mb-3 col-6">
+                  <label class="form-label text-muted">Category Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Luxury Jacuzzi"
+                  />
+                </div>
+                <div class="form-group mb-3 col-6">
+                  <label class="form-label text-muted">Category Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Portable Jacuzzi"
+                  />
+                </div>
+                <div class="form-group mb-3 col-6">
+                  <label class="form-label text-muted">Category Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Outdoor Jacuzzi"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label text-muted">Service Time Slot</label>
+                <div class="input-group">
+                  <input type="time" class="form-control" value="10:00" />
+                  <input type="time" class="form-control" value="12:00" />
+                  <button class="btn btn-outline-secondary" type="button">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="svg-stroke"
+                      width="24"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M12 5l0 14" />
+                      <path d="M5 12l14 0" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label text-muted">Service Time Slot</label>
+                <div class="input-group">
+                  <input type="time" class="form-control" value="12:00" />
+                  <input type="time" class="form-control" value="02:00" />
+                  <button class="btn btn-outline-secondary" type="button">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="svg-stroke"
+                      width="24"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M12 5l0 14" />
+                      <path d="M5 12l14 0" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label text-muted">Service Time Slot</label>
+                <div class="input-group">
+                  <input type="time" class="form-control" value="04:00" />
+                  <input type="time" class="form-control" value="06:00" />
+                  <button class="btn btn-outline-secondary" type="button">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="svg-stroke"
+                      width="24"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M12 5l0 14" />
+                      <path d="M5 12l14 0" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">
+              Update changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--[ hotelair template vender js ]-->
     <script src="assets/bundles/libscripts.bundle.js"></script>
+    <script src="assets/bundles/dataTables.bundle.js"></script>
 
     <!-- Template page js -->
     <script src="assets/js/main.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".dataTable").addClass("nowrap").dataTable({
+          responsive: true,
+        });
+      });
+    </script>
   </body>
 
-  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employee-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:52 GMT -->
+  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/personalised-settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:31:46 GMT -->
 </html>

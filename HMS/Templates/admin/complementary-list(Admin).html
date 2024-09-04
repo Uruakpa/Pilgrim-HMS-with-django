@@ -1,6 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employee-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:52 GMT -->
+  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/complementary-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:31:47 GMT -->
   <head>
     <title>: X-EMPIRE: Hotel Management Admin Dashboard </title>
     <meta charset="utf-8" />
@@ -35,15 +36,17 @@
       href="assets/images/apple-touch-icon.png"
     />
 
+    <link rel="stylesheet" href="assets/vendor/dataTables.min.css" />
+
     <!--[ Template main css file ]-->
     <link rel="stylesheet" href="assets/css/style.min.css" />
-     <link rel="stylesheet" href="assets/css/Admin.css">
+       <link rel="stylesheet" href="assets/css/Admin.css">
   </head>
 
   <body data-theme="theme-Custom" class="svgstroke-a bg-gradient">
     <main class="container-fluid px-0">
       <!-- start: page menu link -->
-     	<aside class="ps-xl-5 ps-lg-4 ps-3 pe-2 py-3 sidebar sticky-top" data-bs-theme="none">
+   	<aside class="ps-xl-5 ps-lg-4 ps-3 pe-2 py-3 sidebar sticky-top" data-bs-theme="none">
 			<nav class="navbar navbar-expand-xl py-0">
 				<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas_Navbar">
 					<div class="offcanvas-header">
@@ -469,10 +472,11 @@
 			</nav>
 		</aside>
 
+	
 
-      <div class="content">
+		 <div class="content">
         <!-- start: page header -->
-    	<header class="px-xl-5 px-lg-4 px-3 sticky-top" data-bs-theme="none">
+      	<header class="px-xl-5 px-lg-4 px-3 sticky-top" data-bs-theme="none">
 				<div class="d-flex justify-content-between align-items-center py-2 w-100">
 					<div class="d-flex align-items-center pe-4">
 						<button class="btn d-inline-flex d-xl-none border-0 p-0 pe-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_Navbar">
@@ -742,18 +746,15 @@
         <!-- start: page header area -->
         <div class="px-xl-5 px-lg-4 px-3 py-2 page-header">
           <ol class="breadcrumb mb-0 bg-transparent">
-            <li class="breadcrumb-item">
-              <a href="index-hr.html" title="home">Home</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="employees-all.html" title="Employees">Employee</a>
+            <li class="px-3">
+              <a href="index(Admin).html" title="home">Home</a>
             </li>
             <li
               class="breadcrumb-item active"
               aria-current="page"
-              title="Employee Details"
+              title="Complementary List"
             >
-              Profile
+              Complementary List
             </li>
           </ol>
           <ul class="list-unstyled action d-flex align-items-center mb-0">
@@ -883,524 +884,480 @@
         <!-- start: page body area -->
         <div class="px-xl-5 px-lg-4 px-3 py-3 page-body">
           <div class="row g-3">
-            <div class="col-12">
+            <div class="col-sm-12">
               <div
-                class="py-3 px-0 d-flex align-items-center justify-content-between border-top"
+                class="d-flex align-items-center justify-content-between flex-wrap"
               >
-                <h3 class="flex-fill h4 mb-0 mt-sm-0">Employee Profile</h3>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="card p-lg-3">
-                <div
-                  class="card-body d-flex flex-column flex-sm-row text-center text-sm-start"
-                >
-                  <div class="profile-av text-center">
-                    <img
-                      class="rounded-circle img-thumbnail shadow avatar xxl"
-                      src="assets/images/lg/avatar1.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="flex-grow-1 ms-0 ms-sm-4">
-                    <h5 class="mb-1 mt-2">Luke Short</h5>
-                    <p class="text-muted mb-0">
-                      Master Safe |
-                      <span>Employee Id : <strong>00001</strong></span>
-                    </p>
-                    <p>
-                      Check out our brand new bootstrap admin template! 🚀 The
-                      purpose of lorem ipsum is to create a natural looking
-                      block of text (sentence, paragraph, page, etc.) that
-                      doesn't distract from the layout. A practice not without
-                      controversy.
-                    </p>
-                    <div
-                      class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-sm-start"
-                    >
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Mobile</small>
-                        <div class="fs-6">+1 202-555-0174</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Email</small>
-                        <div class="fs-6">LukeShortn@gmail.com</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Birth Date</small>
-                        <div class="fs-6">19/03/1980</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">City</small>
-                        <div class="fs-6">New york</div>
-                      </div>
-                    </div>
-                  </div>
+                <h3 class="fw-bold mb-0">Complementary List</h3>
+                <div class="col-auto d-flex w-sm-100">
+                  <button
+                    type="button"
+                    class="btn btn-dark"
+                    data-bs-toggle="modal"
+                    data-bs-target="#add-complementary"
+                  >
+                    Add Complementary
+                  </button>
                 </div>
               </div>
             </div>
-            <div class="col-md-12">
-              <div class="row g-3">
-                <div class="col-lg-6 col-md-6">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="mb-0">Personal Informations</h5>
-                      <button
-                        type="button"
-                        class="btn p-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#PersonalInfo"
-                      >
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Nationality</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Indian</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Religion</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Hindu</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Marital Status</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Married</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Passport No.</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">5468953210</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap">
-                          <div class="col-lg-5 col-6">
-                            <span>Emergency Contact</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">7468953210</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="mb-0">Bank information</h5>
-                      <button
-                        type="button"
-                        class="btn p-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#BankInfo"
-                      >
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Bank Name</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Kotak</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Account No.</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">5436874596325486</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>IFSC Code</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Kotak000021</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Pan No</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">ACQPF6584L</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap">
-                          <div class="col-lg-5 col-6">
-                            <span>UPI Id</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">454812kotak@upi</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <table
+                    class="table dataTable align-middle table-hover table-body"
+                    style="width: 100%"
+                  >
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>Room Type</th>
+                        <th>Complementary</th>
+                        <th>Complementary Rate</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1101</td>
+                        <td>Family Room</td>
+                        <td>Online</td>
+                        <td>5%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1102</td>
+                        <td>Deluxe Suite</td>
+                        <td>Online</td>
+                        <td>15%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1103</td>
+                        <td>Standard Room</td>
+                        <td>Online</td>
+                        <td>8%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1104</td>
+                        <td>Single Room</td>
+                        <td>Offline</td>
+                        <td>10%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1105</td>
+                        <td>Executive Suite</td>
+                        <td>Online</td>
+                        <td>15%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1106</td>
+                        <td>Presidential Suite</td>
+                        <td>Offline</td>
+                        <td>8%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1107</td>
+                        <td>Double Room</td>
+                        <td>Online</td>
+                        <td>20%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1108</td>
+                        <td>Family Suite</td>
+                        <td>Offline</td>
+                        <td>12%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1109</td>
+                        <td>Junior Suite</td>
+                        <td>Online</td>
+                        <td>25%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1110</td>
+                        <td>King Suite</td>
+                        <td>Offline</td>
+                        <td>7%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1111</td>
+                        <td>Twin Room</td>
+                        <td>Online</td>
+                        <td>18%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1112</td>
+                        <td>Signal Room</td>
+                        <td>Offline</td>
+                        <td>9%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1113</td>
+                        <td>Junior Suite</td>
+                        <td>Online</td>
+                        <td>14%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1114</td>
+                        <td>Family Room</td>
+                        <td>Offline</td>
+                        <td>11%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1115</td>
+                        <td>Superior Room</td>
+                        <td>Online</td>
+                        <td>17%</td>
+                        <td>
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#edit-complementary"
+                          >
+                            <i class="bi bi-pencil-square"></i>
+                          </button>
+                          <button type="button" class="btn deleterow">
+                            <i class="bi bi-trash text-danger"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
+          <!-- Row End -->
         </div>
       </div>
     </main>
 
-    <!-- Personal Informations-->
-    <div class="modal fade" id="PersonalInfo" tabindex="-1" aria-hidden="true">
-      <div
-        class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fw-bold">Personal Informations</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form class="row g-3">
-              <div class="col-6">
-                <label class="form-label text-muted">Nationality</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Indian"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Religion</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Hindu"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Marital Status</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Married"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Passport No</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="5468953210"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Emergency Contact</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="7468953210"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary">
-              Update Details
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bank information-->
-    <div class="modal fade" id="BankInfo" tabindex="-1" aria-hidden="true">
-      <div
-        class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fw-bold" id="edit2Label">
-              Bank information
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form class="row g-3">
-              <div class="col-6">
-                <label class="form-label text-muted">Bank Name</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Kotak"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Account No.</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="5436874596325486"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">IFSC Code</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Kotak000021"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Pan No</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="ACQPF6584L"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">UPI Id</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="454812kotak@upi"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary">
-              Update Details
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- start: template setting, and more. -->
+    
+
+    <!-- Add Complementary-->
     <div
-      class="offcanvas offcanvas-end"
+      class="modal fade"
+      id="add-complementary"
       tabindex="-1"
-      id="offcanvas_setting"
-      aria-labelledby="offcanvas_setting"
+      aria-hidden="true"
     >
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title">Template Setting</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Add Complementary</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group mb-3">
+                <label class="form-label text-muted"
+                  >Room Type <span class="text-danger">*</span></label
+                >
+                <select class="form-select">
+                  <option selected>Choose Room Type</option>
+                  <option value="1">Family Room</option>
+                  <option value="2">Deluxe Suite</option>
+                  <option value="3">Executive Suite</option>
+                  <option value="4">Single Room</option>
+                  <option value="6">Double Room</option>
+                  <option value="7">Family Suite</option>
+                  <option value="8">Presidential Suite</option>
+                  <option value="9">Superior Room</option>
+                  <option value="10">Luxury Suite</option>
+                </select>
+              </div>
+              <div class="form-group mb-3">
+                <label class="form-label text-muted">Complementary</label>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label class="form-label text-muted">Commission Rate</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Commission Rate"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
       </div>
-      <div class="offcanvas-body">
-        <div class="mb-4">
-          <h6>Set Theme Color</h6>
-          <ul class="choose-skin list-unstyled mb-0">
-            <li data-theme="ValenciaRed">
-              <div style="--hotelair-theme-color: #d63b38"></div>
-            </li>
-            <li data-theme="SunOrange">
-              <div style="--hotelair-theme-color: #f7a614"></div>
-            </li>
-            <li data-theme="AppleGreen">
-              <div style="--hotelair-theme-color: #5bc43a"></div>
-            </li>
-            <li data-theme="CeruleanBlue">
-              <div style="--hotelair-theme-color: #00b8d6"></div>
-            </li>
-            <li data-theme="Mariner">
-              <div style="--hotelair-theme-color: #0066fe"></div>
-            </li>
-            <li data-theme="PurpleHeart" class="active">
-              <div style="--hotelair-theme-color: #6238b3"></div>
-            </li>
-            <li data-theme="FrenchRose">
-              <div style="--hotelair-theme-color: #eb5393"></div>
-            </li>
-          </ul>
-        </div>
-        <div class="svg-stroke mb-4">
-          <h6>Icon Border Stroke</h6>
-          <div
-            class="btn-group"
-            role="group"
-            aria-label="Basic radio toggle button group"
-          >
-            <input
-              type="radio"
-              class="btn-check"
-              name="stroke"
-              id="Stroke_A"
-              value="svgstroke-a"
-              checked
-            />
-            <label class="btn btn-outline-primary" for="Stroke_A"
-              >Stroke 1</label
-            >
+    </div>
 
-            <input
-              type="radio"
-              class="btn-check"
-              name="stroke"
-              id="Stroke_B"
-              value="svgstroke-b"
-            />
-            <label class="btn btn-outline-primary" for="Stroke_B"
-              >Stroke 2</label
-            >
-
-            <input
-              type="radio"
-              class="btn-check"
-              name="stroke"
-              id="Stroke_C"
-              value="svgstroke-c"
-            />
-            <label class="btn btn-outline-primary" for="Stroke_C"
-              >Stroke 3</label
-            >
+    <!-- Edit Complementary-->
+    <div
+      class="modal fade"
+      id="edit-complementary"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Edit Complementary</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
-        </div>
-        <div class="mb-4">
-          <h6>Layout Section Ligh/Dark</h6>
-          <ul class="list-unstyled d-flex flex-wrap">
-            <li class="me-2 mb-2 sidebar-toggle">
-              <input type="checkbox" class="btn-check" id="Sidebar_dark" />
-              <label class="btn btn-outline-primary" for="Sidebar_dark"
-                >Sidebar</label
-              >
-            </li>
-            <li class="me-2 mb-2 header-toggle">
-              <input type="checkbox" class="btn-check" id="Header_dark" />
-              <label class="btn btn-outline-primary" for="Header_dark"
-                >Header</label
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="mb-4">
-          <h6>More App Setting</h6>
-          <div class="form-check form-switch bodygradient-toggle">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              role="switch"
-              id="bodyGradient"
-              checked
-            />
-            <label class="form-check-label" for="bodyGradient"
-              >Body Gradient Background</label
-            >
+          <div class="modal-body">
+            <form>
+              <div class="form-group mb-3">
+                <label class="form-label text-muted"
+                  >Room Type <span class="text-danger">*</span></label
+                >
+                <select class="form-select">
+                  <option selected>Family Room</option>
+                  <option value="1">Deluxe Suite</option>
+                  <option value="2">Executive Suite</option>
+                  <option value="3">Single Room</option>
+                  <option value="4">Double Room</option>
+                  <option value="5">Family Suite</option>
+                  <option value="6">Presidential Suite</option>
+                  <option value="7">Superior Room</option>
+                  <option value="8">Luxury Suite</option>
+                </select>
+              </div>
+              <div class="form-group mb-3">
+                <label class="form-label text-muted">Complementary</label>
+                <input type="text" class="form-control" value="Online" />
+              </div>
+              <div class="form-group">
+                <label class="form-label text-muted">Commission Rate</label>
+                <input type="text" class="form-control" value="5%" />
+              </div>
+            </form>
           </div>
-
-          <div class="form-check form-switch monochrome-toggle">
-            <input
-              class="form-check-input fs-6"
-              type="checkbox"
-              role="switch"
-              id="monochrome"
-            />
-            <label class="form-check-label" for="monochrome"
-              >Monochrome Mode</label
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
             >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">
+              Update changes
+            </button>
           </div>
-          <!-- <div class="form-check form-switch gradient-active">
-					<input class="form-check-input fs-6" type="checkbox" role="switch" id="gradient-active">
-					<label class="form-check-label" for="gradient-active">Gradient Active</label>
-				</div> -->
-          <div class="form-check form-switch radius-toggle">
-            <input
-              class="form-check-input fs-6"
-              type="checkbox"
-              role="switch"
-              id="radius0"
-            />
-            <label class="form-check-label" for="radius0"
-              >Border Radius none</label
-            >
-          </div>
-          <div class="form-check form-switch svg-icon-color">
-            <input
-              class="form-check-input fs-6"
-              type="checkbox"
-              role="switch"
-              id="IconColor"
-            />
-            <label class="form-check-label" for="IconColor"
-              >Sidebar Icon color</label
-            >
-          </div>
-          <div class="form-check form-switch cb-shadow">
-            <input
-              class="form-check-input fs-6"
-              type="checkbox"
-              role="switch"
-              id="BoxShadow"
-            />
-            <label class="form-check-label" for="BoxShadow"
-              >Card box shadow active</label
-            >
-          </div>
-        </div>
-        <div class="d-flex">
-          <button type="button" class="btn w-100 me-1 py-2 btn-primary">
-            Buy Now
-          </button>
-          <button type="button" class="btn w-100 ms-1 py-2 btn-dark">
-            View Portfolio
-          </button>
         </div>
       </div>
     </div>
 
     <!--[ hotelair template vender js ]-->
     <script src="assets/bundles/libscripts.bundle.js"></script>
+    <script src="assets/bundles/dataTables.bundle.js"></script>
 
     <!-- Template page js -->
     <script src="assets/js/main.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".dataTable").addClass("nowrap").dataTable({
+          responsive: true,
+        });
+      });
+    </script>
   </body>
 
-  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employee-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:52 GMT -->
+  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/complementary-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:31:47 GMT -->
 </html>

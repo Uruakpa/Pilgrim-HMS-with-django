@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employee-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:52 GMT -->
+  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/room-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:31:47 GMT -->
   <head>
-    <title>: X-EMPIRE: Hotel Management Admin Dashboard </title>
+   <title>: X-EMPIRE: Hotel Management Admin Dashboard </title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta
@@ -35,15 +35,17 @@
       href="assets/images/apple-touch-icon.png"
     />
 
+    <link rel="stylesheet" href="assets/vendor/dataTables.min.css" />
+
     <!--[ Template main css file ]-->
     <link rel="stylesheet" href="assets/css/style.min.css" />
-     <link rel="stylesheet" href="assets/css/Admin.css">
+	   <link rel="stylesheet" href="assets/css/Admin.css">
   </head>
 
   <body data-theme="theme-Custom" class="svgstroke-a bg-gradient">
     <main class="container-fluid px-0">
       <!-- start: page menu link -->
-     	<aside class="ps-xl-5 ps-lg-4 ps-3 pe-2 py-3 sidebar sticky-top" data-bs-theme="none">
+  	<aside class="ps-xl-5 ps-lg-4 ps-3 pe-2 py-3 sidebar sticky-top" data-bs-theme="none">
 			<nav class="navbar navbar-expand-xl py-0">
 				<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas_Navbar">
 					<div class="offcanvas-header">
@@ -470,9 +472,9 @@
 		</aside>
 
 
-      <div class="content">
-        <!-- start: page header -->
-    	<header class="px-xl-5 px-lg-4 px-3 sticky-top" data-bs-theme="none">
+		<div class="content">
+			<!-- start: page header -->
+			<header class="px-xl-5 px-lg-4 px-3 sticky-top" data-bs-theme="none">
 				<div class="d-flex justify-content-between align-items-center py-2 w-100">
 					<div class="d-flex align-items-center pe-4">
 						<button class="btn d-inline-flex d-xl-none border-0 p-0 pe-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_Navbar">
@@ -739,484 +741,302 @@
 					</ul>
 				</div>
 			</header>
-        <!-- start: page header area -->
-        <div class="px-xl-5 px-lg-4 px-3 py-2 page-header">
-          <ol class="breadcrumb mb-0 bg-transparent">
-            <li class="breadcrumb-item">
-              <a href="index-hr.html" title="home">Home</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="employees-all.html" title="Employees">Employee</a>
-            </li>
-            <li
-              class="breadcrumb-item active"
-              aria-current="page"
-              title="Employee Details"
-            >
-              Profile
-            </li>
-          </ol>
-          <ul class="list-unstyled action d-flex align-items-center mb-0">
-            <li class="dropdown">
-              <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                <svg
-                  class="svg-stroke"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path
-                    d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"
-                  ></path>
-                  <path d="M9 12l6 0"></path>
-                  <path d="M12 9l0 6"></path>
-                </svg>
-              </a>
-              <ul
-                class="dropdown-menu dropdown-menu-end p-2 p-xl-3 shadow rounded-4"
-              >
-                <li>
-                  <a class="dropdown-item rounded-pill" href="#">New folder</a>
-                </li>
-                <li>
-                  <a class="dropdown-item rounded-pill" href="#">File upload</a>
-                </li>
-                <li>
-                  <a class="dropdown-item rounded-pill" href="#">Google docs</a>
-                </li>
-                <li>
-                  <a class="dropdown-item rounded-pill" href="#"
-                    >Google sheets</a
-                  >
-                </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item rounded-pill" href="#">+ Invite</a>
-                </li>
-                <li>
-                  <a class="dropdown-item rounded-pill" href="#"
-                    >Generate report</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item rounded-pill" href="#">New Reports</a>
-                </li>
-              </ul>
-            </li>
-            <li class="dropdown ms-3">
-              <a
-                href="#"
-                data-bs-toggle="dropdown"
-                data-bs-auto-close="outside"
-                aria-expanded="false"
-              >
-                <svg
-                  class="svg-stroke"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path
-                    d="M4 4h16v2.172a2 2 0 0 1 -.586 1.414l-4.414 4.414v7l-6 2v-8.5l-4.48 -4.928a2 2 0 0 1 -.52 -1.345v-2.227z"
-                  ></path>
-                </svg>
-              </a>
-              <div
-                class="dropdown-menu dropdown-menu-end p-2 p-xl-3 shadow rounded-4"
-                style="width: 300px"
-              >
-                <h6>Filter Options</h6>
-                <div class="row g-3 mt-3">
-                  <div class="col-12">
-                    <label class="form-label small text-muted"
-                      >Sorted by:</label
-                    >
-                    <input
-                      type="search"
-                      class="form-control"
-                      placeholder="Search"
-                    />
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label small text-muted">Status:</label>
-                    <select class="form-select">
-                      <option selected>Choose...</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label small text-muted"
-                      >Notifications:</label
-                    >
-                    <div class="form-check form-switch">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        role="switch"
-                      />
-                      <label class="form-check-label">Enabled</label>
-                    </div>
-                  </div>
-                  <div class="col-12 text-end mt-4">
-                    <button type="reset" class="btn btn-sm btn-light me-1">
-                      Reset
-                    </button>
-                    <button type="submit" class="btn btn-sm btn-primary">
-                      Apply
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- start: page body area -->
-        <div class="px-xl-5 px-lg-4 px-3 py-3 page-body">
-          <div class="row g-3">
-            <div class="col-12">
-              <div
-                class="py-3 px-0 d-flex align-items-center justify-content-between border-top"
-              >
-                <h3 class="flex-fill h4 mb-0 mt-sm-0">Employee Profile</h3>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="card p-lg-3">
-                <div
-                  class="card-body d-flex flex-column flex-sm-row text-center text-sm-start"
-                >
-                  <div class="profile-av text-center">
-                    <img
-                      class="rounded-circle img-thumbnail shadow avatar xxl"
-                      src="assets/images/lg/avatar1.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="flex-grow-1 ms-0 ms-sm-4">
-                    <h5 class="mb-1 mt-2">Luke Short</h5>
-                    <p class="text-muted mb-0">
-                      Master Safe |
-                      <span>Employee Id : <strong>00001</strong></span>
-                    </p>
-                    <p>
-                      Check out our brand new bootstrap admin template! 🚀 The
-                      purpose of lorem ipsum is to create a natural looking
-                      block of text (sentence, paragraph, page, etc.) that
-                      doesn't distract from the layout. A practice not without
-                      controversy.
-                    </p>
-                    <div
-                      class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-sm-start"
-                    >
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Mobile</small>
-                        <div class="fs-6">+1 202-555-0174</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Email</small>
-                        <div class="fs-6">LukeShortn@gmail.com</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Birth Date</small>
-                        <div class="fs-6">19/03/1980</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">City</small>
-                        <div class="fs-6">New york</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="row g-3">
-                <div class="col-lg-6 col-md-6">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="mb-0">Personal Informations</h5>
-                      <button
-                        type="button"
-                        class="btn p-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#PersonalInfo"
-                      >
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Nationality</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Indian</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Religion</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Hindu</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Marital Status</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Married</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Passport No.</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">5468953210</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap">
-                          <div class="col-lg-5 col-6">
-                            <span>Emergency Contact</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">7468953210</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="mb-0">Bank information</h5>
-                      <button
-                        type="button"
-                        class="btn p-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#BankInfo"
-                      >
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Bank Name</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Kotak</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Account No.</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">5436874596325486</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>IFSC Code</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Kotak000021</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Pan No</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">ACQPF6584L</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap">
-                          <div class="col-lg-5 col-6">
-                            <span>UPI Id</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">454812kotak@upi</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <!-- Personal Informations-->
-    <div class="modal fade" id="PersonalInfo" tabindex="-1" aria-hidden="true">
-      <div
-        class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fw-bold">Personal Informations</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form class="row g-3">
-              <div class="col-6">
-                <label class="form-label text-muted">Nationality</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Indian"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Religion</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Hindu"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Marital Status</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Married"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Passport No</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="5468953210"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Emergency Contact</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="7468953210"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary">
-              Update Details
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bank information-->
-    <div class="modal fade" id="BankInfo" tabindex="-1" aria-hidden="true">
-      <div
-        class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fw-bold" id="edit2Label">
-              Bank information
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form class="row g-3">
-              <div class="col-6">
-                <label class="form-label text-muted">Bank Name</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Kotak"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Account No.</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="5436874596325486"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">IFSC Code</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Kotak000021"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Pan No</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="ACQPF6584L"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">UPI Id</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="454812kotak@upi"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary">
-              Update Details
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+			<!-- start: page header area -->
+			<div class="px-xl-5 px-lg-4 px-3 py-2 page-header">
+				<ol class="breadcrumb mb-0 bg-transparent">
+					<li class="px-3"><a href="tuning.html" title="tuning">Home</a></li>
+					<li class="breadcrumb-item active" aria-current="page" title="Room List">Room List</li>
+				</ol>
+				<ul class="list-unstyled action d-flex align-items-center mb-0">
+					<li class="dropdown">
+						<a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+							<svg class="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="22" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+								<path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path>
+								<path d="M9 12l6 0"></path>
+								<path d="M12 9l0 6"></path>
+							</svg>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end p-2 p-xl-3 shadow rounded-4">
+							<li><a class="dropdown-item rounded-pill" href="#">New folder</a></li>
+							<li><a class="dropdown-item rounded-pill" href="#">File upload</a></li>
+							<li><a class="dropdown-item rounded-pill" href="#">Google docs</a></li>
+							<li><a class="dropdown-item rounded-pill" href="#">Google sheets</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item rounded-pill" href="#">+ Invite</a></li>
+							<li><a class="dropdown-item rounded-pill" href="#">Generate report</a></li>
+							<li><a class="dropdown-item rounded-pill" href="#">New Reports</a></li>
+						</ul>
+					</li>
+					<li class="dropdown ms-3">
+						<a href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+							<svg class="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="22" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+								<path d="M4 4h16v2.172a2 2 0 0 1 -.586 1.414l-4.414 4.414v7l-6 2v-8.5l-4.48 -4.928a2 2 0 0 1 -.52 -1.345v-2.227z"></path>
+							</svg>
+						</a>
+						<div class="dropdown-menu dropdown-menu-end p-2 p-xl-3 shadow rounded-4" style="width: 300px;">
+							<h6>Filter Options</h6>
+							<div class="row g-3 mt-3">
+								<div class="col-12">
+									<label class="form-label small text-muted">Sorted by:</label>
+									<input type="search" class="form-control" placeholder="Search">
+								</div>
+								<div class="col-12">
+									<label class="form-label small text-muted">Status:</label>
+									<select class="form-select">
+										<option selected>Choose...</option>
+										<option>...</option>
+									</select>
+								</div>
+								<div class="col-12">
+									<label class="form-label small text-muted">Notifications:</label>
+									<div class="form-check form-switch">
+										<input class="form-check-input" type="checkbox" role="switch">
+										<label class="form-check-label">Enabled</label>
+									</div>
+								</div>
+								<div class="col-12 text-end mt-4">
+									<button type="reset" class="btn btn-sm btn-light me-1">Reset</button>
+									<button type="submit" class="btn btn-sm btn-primary">Apply</button>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- start: page body area -->
+			<div class="px-xl-5 px-lg-4 px-3 py-3 page-body">
+                <div class="row g-3">
+					<div class="col-sm-12">
+						<div class="d-flex align-items-center justify-content-between flex-wrap">
+							<h3 class="fw-bold mb-0">Room List</h3>
+							<div class="col-auto d-flex w-sm-100">
+								<button type="button" class="btn btn-dark" data-bs-toggle="offcanvas" data-bs-target="#add-room" aria-controls="add-room">Add Room</button>
+							</div>
+						</div>
+				  	</div>
+				  
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+								<table class="table dataTable align-middle table-hover table-body" style="width: 100%;">
+									<thead>
+										<tr>
+											<th>Id</th>
+											<th>Room Type</th>
+											<th>Room Price</th>
+											<th>Bed Charge</th> 
+											<th>Capacity</th>
+											<th>Room Size</th>
+											<th>Bed No</th>
+											<th>Bed Type</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>Vip Guest</td>
+											<td>4000</td>
+											<td>100</td>
+											<td>3</td>
+											<td>King</td>
+											<td>2</td>
+											<td>Standard Double</td>
+											<td>
+												<button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#edit-room" aria-controls="edit-room"><i class="bi bi-pencil-square"></i></button>
+												<button type="button" class="btn deleterow"><i class="bi bi-trash text-danger"></i></button>
+											</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>Vip</td>
+											<td>10000</td>
+											<td>400</td>
+											<td>20</td>
+											<td>King</td>
+											<td>1</td>
+											<td>Electric Bed</td>
+											<td>
+												<button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#edit-room" aria-controls="edit-room"><i class="bi bi-pencil-square"></i></button>
+												<button type="button" class="btn deleterow"><i class="bi bi-trash text-danger"></i></button>
+											</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>Family Room</td>
+											<td>4500</td>
+											<td>150</td>
+											<td>4</td>
+											<td>Queen</td>
+											<td>2</td>
+											<td>Standard Queen</td>
+											<td>
+												<button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#edit-room" aria-controls="edit-room"><i class="bi bi-pencil-square"></i></button>
+												<button type="button" class="btn deleterow"><i class="bi bi-trash text-danger"></i></button>
+											</td>
+										  </tr>
+										  <tr>
+											<td>4</td>
+											<td>Deluxe Suite</td>
+											<td>5500</td>
+											<td>130</td>
+											<td>3</td>
+											<td>King</td>
+											<td>1</td>
+											<td>Luxury King</td>
+											<td>
+												<button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#edit-room" aria-controls="edit-room"><i class="bi bi-pencil-square"></i></button>
+												<button type="button" class="btn deleterow"><i class="bi bi-trash text-danger"></i></button>
+											</td>
+										  </tr>
+										  <tr>
+											<td>5</td>
+											<td>Standard Room</td>
+											<td>3000</td>
+											<td>80</td>
+											<td>2</td>
+											<td>Queen</td>
+											<td>1</td>
+											<td>Standard Queen</td>
+											<td>
+												<button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#edit-room" aria-controls="edit-room"><i class="bi bi-pencil-square"></i></button>
+												<button type="button" class="btn deleterow"><i class="bi bi-trash text-danger"></i></button>
+											</td>
+										  </tr>
+										  <tr>
+											<td>6</td>
+											<td>Single Room</td>
+											<td>2500</td>
+											<td>70</td>
+											<td>1</td>
+											<td>Twin</td>
+											<td>1</td>
+											<td>Standard Twin</td>
+											<td>
+												<button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#edit-room" aria-controls="edit-room"><i class="bi bi-pencil-square"></i></button>
+												<button type="button" class="btn deleterow"><i class="bi bi-trash text-danger"></i></button>
+											</td>
+										  </tr>
+										  <tr>
+											<td>7</td>
+											<td>Executive Room</td>
+											<td>4500</td>
+											<td>110</td>
+											<td>2</td>
+											<td>Queen</td>
+											<td>2</td>
+											<td>Luxury Queen</td>
+											<td>
+												<button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#edit-room" aria-controls="edit-room"><i class="bi bi-pencil-square"></i></button>
+												<button type="button" class="btn deleterow"><i class="bi bi-trash text-danger"></i></button>
+											</td>
+										  </tr>
+										  <tr>
+											<td>8</td>
+											<td>Presidential Suite</td>
+											<td>8000</td>
+											<td>200</td>
+											<td>6</td>
+											<td>King</td>
+											<td>3</td>
+											<td>Luxury King</td>
+											<td>
+												<button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#edit-room" aria-controls="edit-room"><i class="bi bi-pencil-square"></i></button>
+												<button type="button" class="btn deleterow"><i class="bi bi-trash text-danger"></i></button>
+											</td>
+										  </tr>
+										  <tr>
+											<td>9</td>
+											<td>Double Room</td>
+											<td>3500</td>
+											<td>90</td>
+											<td>2</td>
+											<td>King</td>
+											<td>1</td>
+											<td>Standard King</td>
+											<td>
+												<button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#edit-room" aria-controls="edit-room"><i class="bi bi-pencil-square"></i></button>
+												<button type="button" class="btn deleterow"><i class="bi bi-trash text-danger"></i></button>
+											</td>
+										  </tr>
+										  <tr>
+											<td>10</td>
+											<td>Family Suite</td>
+											<td>6000</td>
+											<td>160</td>
+											<td>5</td>
+											<td>King</td>
+											<td>2</td>
+											<td>Luxury King</td>
+											<td>
+												<button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#edit-room" aria-controls="edit-room"><i class="bi bi-pencil-square"></i></button>
+												<button type="button" class="btn deleterow"><i class="bi bi-trash text-danger"></i></button>
+											</td>
+										  </tr>
+										  <tr>
+											<td>11</td>
+											<td>Junior Suite</td>
+											<td>4800</td>
+											<td>140</td>
+											<td>3</td>
+											<td>Queen</td>
+											<td>1</td>
+											<td>Luxury Queen</td>
+											<td>
+												<button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#edit-room" aria-controls="edit-room"><i class="bi bi-pencil-square"></i></button>
+												<button type="button" class="btn deleterow"><i class="bi bi-trash text-danger"></i></button>
+											</td>
+										  </tr>
+										  <tr>
+											<td>12</td>
+											<td>King Suite</td>
+											<td>7000</td>
+											<td>180</td>
+											<td>4</td>
+											<td>King</td>
+											<td>2</td>
+											<td>Luxury King</td>
+											<td>
+												<button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#edit-room" aria-controls="edit-room"><i class="bi bi-pencil-square"></i></button>
+												<button type="button" class="btn deleterow"><i class="bi bi-trash text-danger"></i></button>
+											</td>
+										  </tr>
+										  <tr>
+											<td>13</td>
+											<td>Twin Room</td>
+											<td>3200</td>
+											<td>85</td>
+											<td>2</td>
+											<td>Twin</td>
+											<td>2</td>
+											<td>Standard Twin</td>
+											<td>
+												<button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#edit-room" aria-controls="edit-room"><i class="bi bi-pencil-square"></i></button>
+												<button type="button" class="btn deleterow"><i class="bi bi-trash text-danger"></i></button>
+											</td>
+										  </tr>
+										  <tr>
+											<td>14</td>
+											<td>Signal Room</td>
+											<td>1600</td>
+											<td>300</td>
+											<td>1</td>
+											<td>Small</td>
+											<td>1</td>
+											<td>Normal Bed</td>
+											<td>
+												<button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#edit-room" aria-controls="edit-room"><i class="bi bi-pencil-square"></i></button>
+												<button type="button" class="btn deleterow"><i class="bi bi-trash text-danger"></i></button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+                </div><!-- Row End -->
 
     <!-- start: template setting, and more. -->
     <div
@@ -1346,10 +1166,6 @@
               >Monochrome Mode</label
             >
           </div>
-          <!-- <div class="form-check form-switch gradient-active">
-					<input class="form-check-input fs-6" type="checkbox" role="switch" id="gradient-active">
-					<label class="form-check-label" for="gradient-active">Gradient Active</label>
-				</div> -->
           <div class="form-check form-switch radius-toggle">
             <input
               class="form-check-input fs-6"
@@ -1395,12 +1211,255 @@
       </div>
     </div>
 
+    <!-- Add: Room -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="add-room"
+      aria-labelledby="add-room"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Add Room</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <form>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Room Type <span class="text-danger">*</span></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Add Room Type"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Capacity <span class="text-danger">*</span></label
+            >
+            <input type="number" class="form-control" placeholder="Capacity" />
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Extra Capability <span class="text-danger">*</span></label
+            >
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Extra Capability"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Room Price<span class="text-danger">*</span></label
+            >
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Room Price"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Bed Charge<span class="text-danger">*</span></label
+            >
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Bed Charge"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Room Size<span class="text-danger">*</span></label
+            >
+            <select class="form-select">
+              <option selected>Choose Room Size</option>
+              <option value="1">Singal</option>
+              <option value="2">Double</option>
+              <option value="3">Tripal</option>
+              <option value="4">Quad</option>
+              <option value="6">Queen</option>
+              <option value="7">King</option>
+              <option value="8">Others</option>
+            </select>
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Bed Number<span class="text-danger">*</span></label
+            >
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Bed Number"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Bed Type<span class="text-danger">*</span></label
+            >
+            <select class="form-select">
+              <option selected>Choose Room Size</option>
+              <option value="1">King Bed</option>
+              <option value="2">Queen Bed</option>
+              <option value="3">Electric Bed</option>
+              <option value="4">Futon Bed</option>
+              <option value="6">Mattress Bed</option>
+              <option value="7">Air Bed</option>
+            </select>
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Room Drescription<span class="text-danger">*</span></label
+            >
+            <textarea class="form-control"></textarea>
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Reserve Condition<span class="text-danger">*</span></label
+            >
+            <textarea class="form-control"></textarea>
+          </div>
+        </form>
+        <div class="d-flex">
+          <button type="button" class="btn w-100 me-1 py-2 btn-primary">
+            Clear
+          </button>
+          <button type="button" class="btn w-100 ms-1 py-2 btn-dark">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit: Room-->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="edit-room"
+      aria-labelledby="edit-room"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Edit Room</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <form>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Room Type <span class="text-danger">*</span></label
+            >
+            <input type="text" class="form-control" value="VIP-Guest" />
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Capacity <span class="text-danger">*</span></label
+            >
+            <input type="number" class="form-control" value="3" />
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Extra Capability <span class="text-danger">*</span></label
+            >
+            <input type="text" class="form-control" value="YES" />
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Room Price<span class="text-danger">*</span></label
+            >
+            <input type="number" class="form-control" value="4000" />
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Bed Charge<span class="text-danger">*</span></label
+            >
+            <input type="number" class="form-control" value="100" />
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Room Size<span class="text-danger">*</span></label
+            >
+            <select class="form-select">
+              <option selected>King</option>
+              <option value="1">Singal</option>
+              <option value="2">Double</option>
+              <option value="3">Tripal</option>
+              <option value="4">Quad</option>
+              <option value="6">Queen</option>
+              <option value="7">King</option>
+              <option value="8">Others</option>
+            </select>
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Bed Number<span class="text-danger">*</span></label
+            >
+            <input type="number" class="form-control" value="2" />
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Bed Type<span class="text-danger">*</span></label
+            >
+            <select class="form-select">
+              <option selected>Choose Room Size</option>
+              <option value="1">King Bed</option>
+              <option value="2">Queen Bed</option>
+              <option value="3">Electric Bed</option>
+              <option value="4">Futon Bed</option>
+              <option value="6">Mattress Bed</option>
+              <option value="7">Air Bed</option>
+            </select>
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Room Drescription<span class="text-danger">*</span></label
+            >
+            <textarea class="form-control">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </textarea
+            >
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label text-muted"
+              >Reserve Condition<span class="text-danger">*</span></label
+            >
+            <textarea class="form-control">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </textarea
+            >
+          </div>
+        </form>
+        <div class="d-flex">
+          <button type="button" class="btn w-100 ms-1 py-2 btn-primary">
+            Update
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!--[ hotelair template vender js ]-->
     <script src="assets/bundles/libscripts.bundle.js"></script>
+    <script src="assets/bundles/dataTables.bundle.js"></script>
 
     <!-- Template page js -->
     <script src="assets/js/main.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".dataTable").addClass("nowrap").dataTable({
+          responsive: true,
+        });
+      });
+    </script>
   </body>
 
-  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employee-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:52 GMT -->
+  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/room-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:31:47 GMT -->
 </html>

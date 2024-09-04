@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employee-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:52 GMT -->
+  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employees-all.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:31:55 GMT -->
   <head>
-    <title>: X-EMPIRE: Hotel Management Admin Dashboard </title>
+     <title>: X-EMPIRE: Hotel Management Admin Dashboard </title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta
@@ -472,7 +472,7 @@
 
       <div class="content">
         <!-- start: page header -->
-    	<header class="px-xl-5 px-lg-4 px-3 sticky-top" data-bs-theme="none">
+       	<header class="px-xl-5 px-lg-4 px-3 sticky-top" data-bs-theme="none">
 				<div class="d-flex justify-content-between align-items-center py-2 w-100">
 					<div class="d-flex align-items-center pe-4">
 						<button class="btn d-inline-flex d-xl-none border-0 p-0 pe-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_Navbar">
@@ -745,15 +745,12 @@
             <li class="breadcrumb-item">
               <a href="index-hr.html" title="home">Home</a>
             </li>
-            <li class="breadcrumb-item">
-              <a href="employees-all.html" title="Employees">Employee</a>
-            </li>
             <li
               class="breadcrumb-item active"
               aria-current="page"
-              title="Employee Details"
+              title="All Employees"
             >
-              Profile
+              Employee
             </li>
           </ol>
           <ul class="list-unstyled action d-flex align-items-center mb-0">
@@ -871,7 +868,7 @@
                     <button type="reset" class="btn btn-sm btn-light me-1">
                       Reset
                     </button>
-                    <button type="submit" class="btn btn-sm btn-primary">
+                    <button type="submit" class="btn btn-sm btn-accent">
                       Apply
                     </button>
                   </div>
@@ -885,178 +882,266 @@
           <div class="row g-3">
             <div class="col-12">
               <div
-                class="py-3 px-0 d-flex align-items-center justify-content-between border-top"
+                class="px-0 d-flex align-items-center justify-content-between"
               >
-                <h3 class="flex-fill h4 mb-0 mt-sm-0">Employee Profile</h3>
+                <h3 class="fw-bold flex-fill mb-0">All Employee</h3>
+                <button
+                  type="button"
+                  class="btn btn-dark me-1 mt-1 w-sm-100"
+                  data-bs-toggle="modal"
+                  data-bs-target="#createemp"
+                >
+                  Add Employee
+                </button>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-primary dropdown-toggle mt-1 w-sm-100"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Status
+                  </button>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end p-2 p-xl-3 shadow rounded-4"
+                  >
+                    <li>
+                      <a class="dropdown-item rounded-pill" href="#">All</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded-pill" href="#"
+                        >Task Assign Members</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded-pill" href="#"
+                        >Not Assign Members</a
+                      >
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <div class="col-12">
+            <div class="col-lg-6 col-md-12">
               <div class="card p-lg-3">
                 <div
                   class="card-body d-flex flex-column flex-sm-row text-center text-sm-start"
                 >
                   <div class="profile-av text-center">
                     <img
-                      class="rounded-circle img-thumbnail shadow avatar xxl"
                       src="assets/images/lg/avatar1.jpg"
                       alt=""
+                      class="avatar xl rounded-circle img-thumbnail shadow"
                     />
                   </div>
                   <div class="flex-grow-1 ms-0 ms-sm-4">
                     <h5 class="mb-1 mt-2">Luke Short</h5>
-                    <p class="text-muted mb-0">
-                      Master Safe |
-                      <span>Employee Id : <strong>00001</strong></span>
-                    </p>
+                    <p class="text-muted mb-0 small">Master Safe</p>
                     <p>
-                      Check out our brand new bootstrap admin template! 🚀 The
-                      purpose of lorem ipsum is to create a natural looking
-                      block of text (sentence, paragraph, page, etc.) that
-                      doesn't distract from the layout. A practice not without
-                      controversy.
+                      Vestibulum ante ipsum primis in faucibus orci luctus et
+                      ultrices. Vestibulum ante ipsum primis in faucibus orci
+                      luctus et ultrices
                     </p>
-                    <div
-                      class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-sm-start"
+
+                    <a class="btn btn-sm btn-dark" href="employee-profile.html"
+                      >View Profile</a
                     >
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Mobile</small>
-                        <div class="fs-6">+1 202-555-0174</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Email</small>
-                        <div class="fs-6">LukeShortn@gmail.com</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Birth Date</small>
-                        <div class="fs-6">19/03/1980</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">City</small>
-                        <div class="fs-6">New york</div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-12">
-              <div class="row g-3">
-                <div class="col-lg-6 col-md-6">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="mb-0">Personal Informations</h5>
-                      <button
-                        type="button"
-                        class="btn p-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#PersonalInfo"
-                      >
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Nationality</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Indian</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Religion</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Hindu</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Marital Status</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Married</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Passport No.</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">5468953210</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap">
-                          <div class="col-lg-5 col-6">
-                            <span>Emergency Contact</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">7468953210</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
+            <div class="col-lg-6 col-md-12">
+              <div class="card p-lg-3">
+                <div
+                  class="card-body d-flex flex-column flex-sm-row text-center text-sm-start"
+                >
+                  <div class="profile-av text-center">
+                    <img
+                      src="assets/images/lg/avatar2.jpg"
+                      alt=""
+                      class="avatar xl rounded-circle img-thumbnail shadow"
+                    />
+                  </div>
+                  <div class="flex-grow-1 ms-0 ms-sm-4">
+                    <h5 class="mb-1 mt-2">Lillian Powell</h5>
+                    <p class="text-muted mb-0 small">BarTender</p>
+                    <p>
+                      Vestibulum ante ipsum primis in faucibus orci luctus et
+                      ultrices. Vestibulum ante ipsum primis in faucibus orci
+                      luctus et ultrices
+                    </p>
+
+                    <a class="btn btn-sm btn-dark" href="employee-profile.html"
+                      >View Profile</a
+                    >
                   </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="mb-0">Bank information</h5>
-                      <button
-                        type="button"
-                        class="btn p-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#BankInfo"
-                      >
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Bank Name</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Kotak</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Account No.</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">5436874596325486</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>IFSC Code</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Kotak000021</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Pan No</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">ACQPF6584L</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap">
-                          <div class="col-lg-5 col-6">
-                            <span>UPI Id</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">454812kotak@upi</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div class="card p-lg-3">
+                <div
+                  class="card-body d-flex flex-column flex-sm-row text-center text-sm-start"
+                >
+                  <div class="profile-av text-center">
+                    <img
+                      src="assets/images/lg/avatar3.jpg"
+                      alt=""
+                      class="avatar xl rounded-circle img-thumbnail shadow"
+                    />
+                  </div>
+                  <div class="flex-grow-1 ms-0 ms-sm-4">
+                    <h5 class="mb-1 mt-2">Rachel Parsons</h5>
+                    <p class="text-muted mb-0 small">Manager</p>
+                    <p>
+                      Vestibulum ante ipsum primis in faucibus orci luctus et
+                      ultrices. Vestibulum ante ipsum primis in faucibus orci
+                      luctus et ultrices
+                    </p>
+
+                    <a class="btn btn-sm btn-dark" href="employee-profile.html"
+                      >View Profile</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div class="card p-lg-3">
+                <div
+                  class="card-body d-flex flex-column flex-sm-row text-center text-sm-start"
+                >
+                  <div class="profile-av text-center">
+                    <img
+                      src="assets/images/lg/avatar4.jpg"
+                      alt=""
+                      class="avatar xl rounded-circle img-thumbnail shadow"
+                    />
+                  </div>
+                  <div class="flex-grow-1 ms-0 ms-sm-4">
+                    <h5 class="mb-1 mt-2">John Hardacre</h5>
+                    <p class="text-muted mb-0 small">Housekeeping Staff</p>
+                    <p>
+                      Vestibulum ante ipsum primis in faucibus orci luctus et
+                      ultrices. Vestibulum ante ipsum primis in faucibus orci
+                      luctus et ultrices
+                    </p>
+
+                    <a class="btn btn-sm btn-dark" href="employee-profile.html"
+                      >View Profile</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div class="card p-lg-3">
+                <div
+                  class="card-body d-flex flex-column flex-sm-row text-center text-sm-start"
+                >
+                  <div class="profile-av text-center">
+                    <img
+                      src="assets/images/lg/avatar5.jpg"
+                      alt=""
+                      class="avatar xl rounded-circle img-thumbnail shadow"
+                    />
+                  </div>
+                  <div class="flex-grow-1 ms-0 ms-sm-4">
+                    <h5 class="mb-1 mt-2">Jan Ince</h5>
+                    <p class="text-muted mb-0 small">Receptionist</p>
+                    <p>
+                      Vestibulum ante ipsum primis in faucibus orci luctus et
+                      ultrices. Vestibulum ante ipsum primis in faucibus orci
+                      luctus et ultrices
+                    </p>
+
+                    <a class="btn btn-sm btn-dark" href="employee-profile.html"
+                      >View Profile</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div class="card p-lg-3">
+                <div
+                  class="card-body d-flex flex-column flex-sm-row text-center text-sm-start"
+                >
+                  <div class="profile-av text-center">
+                    <img
+                      src="assets/images/lg/avatar6.jpg"
+                      alt=""
+                      class="avatar xl rounded-circle img-thumbnail shadow"
+                    />
+                  </div>
+                  <div class="flex-grow-1 ms-0 ms-sm-4">
+                    <h5 class="mb-1 mt-2">Steven Butler</h5>
+                    <p class="text-muted mb-0 small">Receptionist</p>
+                    <p>
+                      Vestibulum ante ipsum primis in faucibus orci luctus et
+                      ultrices. Vestibulum ante ipsum primis in faucibus orci
+                      luctus et ultrices
+                    </p>
+
+                    <a class="btn btn-sm btn-dark" href="employee-profile.html"
+                      >View Profile</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div class="card p-lg-3">
+                <div
+                  class="card-body d-flex flex-column flex-sm-row text-center text-sm-start"
+                >
+                  <div class="profile-av text-center">
+                    <img
+                      src="assets/images/lg/avatar7.jpg"
+                      alt=""
+                      class="avatar xl rounded-circle img-thumbnail shadow"
+                    />
+                  </div>
+                  <div class="flex-grow-1 ms-0 ms-sm-4">
+                    <h5 class="mb-1 mt-2">Robert Hammer</h5>
+                    <p class="text-muted mb-0 small">Master Safe</p>
+                    <p>
+                      Vestibulum ante ipsum primis in faucibus orci luctus et
+                      ultrices. Vestibulum ante ipsum primis in faucibus orci
+                      luctus et ultrices
+                    </p>
+
+                    <a class="btn btn-sm btn-dark" href="employee-profile.html"
+                      >View Profile</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div class="card p-lg-3">
+                <div
+                  class="card-body d-flex flex-column flex-sm-row text-center text-sm-start"
+                >
+                  <div class="profile-av text-center">
+                    <img
+                      src="assets/images/lg/avatar8.jpg"
+                      alt=""
+                      class="avatar xl rounded-circle img-thumbnail shadow"
+                    />
+                  </div>
+                  <div class="flex-grow-1 ms-0 ms-sm-4">
+                    <h5 class="mb-1 mt-2">Paul Slater</h5>
+                    <p class="text-muted mb-0 small">Receptionist</p>
+                    <p>
+                      Vestibulum ante ipsum primis in faucibus orci luctus et
+                      ultrices. Vestibulum ante ipsum primis in faucibus orci
+                      luctus et ultrices
+                    </p>
+
+                    <a class="btn btn-sm btn-dark" href="employee-profile.html"
+                      >View Profile</a
+                    >
                   </div>
                 </div>
               </div>
@@ -1066,14 +1151,14 @@
       </div>
     </main>
 
-    <!-- Personal Informations-->
-    <div class="modal fade" id="PersonalInfo" tabindex="-1" aria-hidden="true">
+    <!-- Create Employee-->
+    <div class="modal fade" id="createemp" tabindex="-1" aria-hidden="true">
       <div
         class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title fw-bold">Personal Informations</h5>
+            <h5 class="modal-title fw-bold">Add Employee</h5>
             <button
               type="button"
               class="btn-close"
@@ -1083,45 +1168,107 @@
           </div>
           <div class="modal-body">
             <form class="row g-3">
-              <div class="col-6">
-                <label class="form-label text-muted">Nationality</label>
+              <div class="col-lg-6 col-12">
+                <label class="form-label text-muted">Employee Name</label>
                 <input
                   type="text"
                   class="form-control form-control-lg"
-                  value="Indian"
+                  placeholder=""
                 />
               </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Religion</label>
+              <div class="col-lg-6 col-12">
+                <label class="form-label text-muted">Employee Company</label>
                 <input
                   type="text"
                   class="form-control form-control-lg"
-                  value="Hindu"
+                  placeholder=""
                 />
               </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Marital Status</label>
+              <div class="col-12">
+                <label class="form-label text-muted">Employee Profile</label>
+                <input class="form-control" type="file" />
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <label class="form-label text-muted">Employee ID</label>
                 <input
                   type="text"
                   class="form-control form-control-lg"
-                  value="Married"
+                  placeholder="User ID"
                 />
               </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Passport No</label>
+              <div class="col-lg-4 col-md-6">
+                <label class="form-label text-muted">Joining Date</label>
+                <input type="date" class="form-control form-control-lg" />
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <label class="form-label text-muted">User Name</label>
                 <input
                   type="text"
                   class="form-control form-control-lg"
-                  value="5468953210"
+                  placeholder="User Name"
                 />
               </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Emergency Contact</label>
+              <div class="col-lg-4 col-md-6">
+                <label class="form-label text-muted">Password</label>
                 <input
-                  type="text"
+                  type="Password"
                   class="form-control form-control-lg"
-                  value="7468953210"
+                  placeholder="Password"
                 />
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <label class="form-label text-muted">Email ID</label>
+                <input
+                  type="email"
+                  class="form-control form-control-lg"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="col-lg-4 col-md-6">
+                <label class="form-label text-muted">Phone</label>
+                <input
+                  type="number"
+                  class="form-control form-control-lg"
+                  placeholder="Phone number"
+                />
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label text-muted">Department</label>
+                <select
+                  class="form-select form-control-lg"
+                  aria-label="Default select Project Category"
+                >
+                  <option selected>Housekeeping Staff</option>
+                  <option value="1">It Management</option>
+                  <option value="2">Marketing</option>
+                </select>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label text-muted">Designation</label>
+                <select
+                  class="form-select form-control-lg"
+                  aria-label="Default select Project Category"
+                >
+                  <option selected>Master Safe</option>
+                  <option value="1">BarTender</option>
+                  <option value="2">Manager</option>
+                  <option value="3">BarTender</option>
+                  <option value="4">Housekeeping Staff</option>
+                  <option value="5">Receptionist</option>
+                  <option value="6">HR Manager</option>
+                  <option value="7">BarTender</option>
+                  <option value="10">Other</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label text-muted"
+                  >Description (optional)</label
+                >
+                <textarea
+                  class="form-control"
+                  rows="3"
+                  placeholder="Add any extra details about the request"
+                ></textarea>
               </div>
             </form>
           </div>
@@ -1133,86 +1280,7 @@
             >
               Cancel
             </button>
-            <button type="button" class="btn btn-primary">
-              Update Details
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bank information-->
-    <div class="modal fade" id="BankInfo" tabindex="-1" aria-hidden="true">
-      <div
-        class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title fw-bold" id="edit2Label">
-              Bank information
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form class="row g-3">
-              <div class="col-6">
-                <label class="form-label text-muted">Bank Name</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Kotak"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Account No.</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="5436874596325486"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">IFSC Code</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Kotak000021"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Pan No</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="ACQPF6584L"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">UPI Id</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="454812kotak@upi"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cancel
-            </button>
-            <button type="button" class="btn btn-primary">
-              Update Details
-            </button>
+            <button type="button" class="btn btn-primary">Create</button>
           </div>
         </div>
       </div>
@@ -1402,5 +1470,5 @@
     <script src="assets/js/main.js"></script>
   </body>
 
-  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employee-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:52 GMT -->
+  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employees-all.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:31:57 GMT -->
 </html>

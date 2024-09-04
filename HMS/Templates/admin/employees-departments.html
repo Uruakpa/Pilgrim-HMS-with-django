@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employee-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:52 GMT -->
+  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employees-departments.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:00 GMT -->
   <head>
-    <title>: X-EMPIRE: Hotel Management Admin Dashboard </title>
+   <title>: X-EMPIRE: Hotel Management Admin Dashboard </title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta
@@ -35,6 +35,8 @@
       href="assets/images/apple-touch-icon.png"
     />
 
+    <link rel="stylesheet" href="assets/css/dataTables.min.css" />
+
     <!--[ Template main css file ]-->
     <link rel="stylesheet" href="assets/css/style.min.css" />
      <link rel="stylesheet" href="assets/css/Admin.css">
@@ -43,7 +45,7 @@
   <body data-theme="theme-Custom" class="svgstroke-a bg-gradient">
     <main class="container-fluid px-0">
       <!-- start: page menu link -->
-     	<aside class="ps-xl-5 ps-lg-4 ps-3 pe-2 py-3 sidebar sticky-top" data-bs-theme="none">
+       	<aside class="ps-xl-5 ps-lg-4 ps-3 pe-2 py-3 sidebar sticky-top" data-bs-theme="none">
 			<nav class="navbar navbar-expand-xl py-0">
 				<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas_Navbar">
 					<div class="offcanvas-header">
@@ -472,7 +474,7 @@
 
       <div class="content">
         <!-- start: page header -->
-    	<header class="px-xl-5 px-lg-4 px-3 sticky-top" data-bs-theme="none">
+      	<header class="px-xl-5 px-lg-4 px-3 sticky-top" data-bs-theme="none">
 				<div class="d-flex justify-content-between align-items-center py-2 w-100">
 					<div class="d-flex align-items-center pe-4">
 						<button class="btn d-inline-flex d-xl-none border-0 p-0 pe-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_Navbar">
@@ -745,15 +747,12 @@
             <li class="breadcrumb-item">
               <a href="index-hr.html" title="home">Home</a>
             </li>
-            <li class="breadcrumb-item">
-              <a href="employees-all.html" title="Employees">Employee</a>
-            </li>
             <li
               class="breadcrumb-item active"
               aria-current="page"
-              title="Employee Details"
+              title="Departments"
             >
-              Profile
+              Departments
             </li>
           </ol>
           <ul class="list-unstyled action d-flex align-items-center mb-0">
@@ -883,197 +882,280 @@
         <!-- start: page body area -->
         <div class="px-xl-5 px-lg-4 px-3 py-3 page-body">
           <div class="row g-3">
-            <div class="col-12">
+            <div class="col-sm-12">
               <div
-                class="py-3 px-0 d-flex align-items-center justify-content-between border-top"
+                class="d-flex align-items-center justify-content-between flex-wrap"
               >
-                <h3 class="flex-fill h4 mb-0 mt-sm-0">Employee Profile</h3>
+                <h3 class="fw-bold mb-0">Departments</h3>
+                <div class="col-auto d-flex w-sm-100">
+                  <button
+                    type="button"
+                    class="btn btn-dark btn-set-task w-sm-100"
+                    data-bs-toggle="modal"
+                    data-bs-target="#adddepartments"
+                  >
+                    Add Department
+                  </button>
+                </div>
               </div>
             </div>
-            <div class="col-12">
-              <div class="card p-lg-3">
-                <div
-                  class="card-body d-flex flex-column flex-sm-row text-center text-sm-start"
+            <div class="col-sm-12">
+              <div class="card p-4">
+                <table
+                  id="myProjectTable"
+                  class="table table-hover align-middle mb-0 w-100"
                 >
-                  <div class="profile-av text-center">
-                    <img
-                      class="rounded-circle img-thumbnail shadow avatar xxl"
-                      src="assets/images/lg/avatar1.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="flex-grow-1 ms-0 ms-sm-4">
-                    <h5 class="mb-1 mt-2">Luke Short</h5>
-                    <p class="text-muted mb-0">
-                      Master Safe |
-                      <span>Employee Id : <strong>00001</strong></span>
-                    </p>
-                    <p>
-                      Check out our brand new bootstrap admin template! 🚀 The
-                      purpose of lorem ipsum is to create a natural looking
-                      block of text (sentence, paragraph, page, etc.) that
-                      doesn't distract from the layout. A practice not without
-                      controversy.
-                    </p>
-                    <div
-                      class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-sm-start"
-                    >
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Mobile</small>
-                        <div class="fs-6">+1 202-555-0174</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Email</small>
-                        <div class="fs-6">LukeShortn@gmail.com</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">Birth Date</small>
-                        <div class="fs-6">19/03/1980</div>
-                      </div>
-                      <div class="bg-light rounded-2 py-2 px-3 me-1 mt-1">
-                        <small class="text-muted">City</small>
-                        <div class="fs-6">New york</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="row g-3">
-                <div class="col-lg-6 col-md-6">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="mb-0">Personal Informations</h5>
-                      <button
-                        type="button"
-                        class="btn p-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#PersonalInfo"
-                      >
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Nationality</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Indian</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Religion</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Hindu</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Marital Status</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Married</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Passport No.</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">5468953210</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap">
-                          <div class="col-lg-5 col-6">
-                            <span>Emergency Contact</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">7468953210</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="card">
-                    <div class="card-header">
-                      <h5 class="mb-0">Bank information</h5>
-                      <button
-                        type="button"
-                        class="btn p-0"
-                        data-bs-toggle="modal"
-                        data-bs-target="#BankInfo"
-                      >
-                        <i class="bi bi-pencil-square"></i>
-                      </button>
-                    </div>
-                    <div class="card-body">
-                      <ul class="list-unstyled mb-0">
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Bank Name</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Kotak</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Account No.</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">5436874596325486</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>IFSC Code</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">Kotak000021</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap mb-2">
-                          <div class="col-lg-5 col-6">
-                            <span>Pan No</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">ACQPF6584L</span>
-                          </div>
-                        </li>
-                        <li class="row flex-wrap">
-                          <div class="col-lg-5 col-6">
-                            <span>UPI Id</span>
-                          </div>
-                          <div class="col">
-                            <span class="text-muted">454812kotak@upi</span>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Department Head</th>
+                      <th>Department Name</th>
+                      <th>Employee UnderWork</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <span class="fw-bold">1</span>
+                      </td>
+                      <td>
+                        <img
+                          class="avatar rounded-circle"
+                          src="assets/images/xs/avatar1.jpg"
+                          alt=""
+                        />
+                        <span class="fw-bold ms-1">Joan Dyer</span>
+                      </td>
+                      <td>Housekeeping Staff</td>
+                      <td>40</td>
+                      <td>
+                        <button
+                          type="button"
+                          class="btn"
+                          data-bs-toggle="offcanvas"
+                          data-bs-target="#UserList"
+                        >
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button
+                          type="button"
+                          class="btn"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editdepartments"
+                        >
+                          <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button type="button" class="btn deleterow text-danger">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fw-bold">2</span>
+                      </td>
+                      <td>
+                        <img
+                          class="avatar rounded-circle"
+                          src="assets/images/xs/avatar2.jpg"
+                          alt=""
+                        />
+                        <span class="fw-bold ms-1">Ryan Randall</span>
+                      </td>
+                      <td>Accounts</td>
+                      <td>48</td>
+                      <td>
+                        <button
+                          type="button"
+                          class="btn"
+                          data-bs-toggle="offcanvas"
+                          data-bs-target="#UserList"
+                        >
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button
+                          type="button"
+                          class="btn"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editdepartments"
+                        >
+                          <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button type="button" class="btn deleterow text-danger">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fw-bold">3</span>
+                      </td>
+                      <td>
+                        <img
+                          class="avatar rounded-circle"
+                          src="assets/images/xs/avatar3.jpg"
+                          alt=""
+                        />
+                        <span class="fw-bold ms-1">Phil Glover</span>
+                      </td>
+                      <td>Support</td>
+                      <td>15</td>
+                      <td>
+                        <button
+                          type="button"
+                          class="btn"
+                          data-bs-toggle="offcanvas"
+                          data-bs-target="#UserList"
+                        >
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button
+                          type="button"
+                          class="btn"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editdepartments"
+                        >
+                          <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button type="button" class="btn deleterow text-danger">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fw-bold">4</span>
+                      </td>
+                      <td>
+                        <img
+                          class="avatar rounded-circle"
+                          src="assets/images/xs/avatar4.jpg"
+                          alt=""
+                        />
+                        <span class="fw-bold ms-1">Victor Rampling</span>
+                      </td>
+                      <td>Manager</td>
+                      <td>39</td>
+                      <td>
+                        <button
+                          type="button"
+                          class="btn"
+                          data-bs-toggle="offcanvas"
+                          data-bs-target="#UserList"
+                        >
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button
+                          type="button"
+                          class="btn"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editdepartments"
+                        >
+                          <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button type="button" class="btn deleterow text-danger">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fw-bold">5</span>
+                      </td>
+                      <td>
+                        <img
+                          class="avatar rounded-circle"
+                          src="assets/images/xs/avatar5.jpg"
+                          alt=""
+                        />
+                        <span class="fw-bold ms-1">Sally Graham</span>
+                      </td>
+                      <td>Recruiter</td>
+                      <td>12</td>
+                      <td>
+                        <button
+                          type="button"
+                          class="btn"
+                          data-bs-toggle="offcanvas"
+                          data-bs-target="#UserList"
+                        >
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button
+                          type="button"
+                          class="btn"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editdepartments"
+                        >
+                          <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button type="button" class="btn deleterow text-danger">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fw-bold">6</span>
+                      </td>
+                      <td>
+                        <img
+                          class="avatar rounded-circle"
+                          src="assets/images/xs/avatar6.jpg"
+                          alt=""
+                        />
+                        <span class="fw-bold ms-1">Robert Anderson</span>
+                      </td>
+                      <td>Admin</td>
+                      <td>8</td>
+                      <td>
+                        <button
+                          type="button"
+                          class="btn"
+                          data-bs-toggle="offcanvas"
+                          data-bs-target="#UserList"
+                        >
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button
+                          type="button"
+                          class="btn"
+                          data-bs-toggle="modal"
+                          data-bs-target="#editdepartments"
+                        >
+                          <i class="bi bi-pencil-square"></i>
+                        </button>
+                        <button type="button" class="btn deleterow text-danger">
+                          <i class="bi bi-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
+          <!-- Row End -->
         </div>
       </div>
     </main>
 
-    <!-- Personal Informations-->
-    <div class="modal fade" id="PersonalInfo" tabindex="-1" aria-hidden="true">
+
+
+    <!-- Add Department-->
+    <div
+      class="modal fade"
+      id="adddepartments"
+      tabindex="-1"
+      aria-hidden="true"
+    >
       <div
-        class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
+        class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable"
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title fw-bold">Personal Informations</h5>
+            <h5 class="modal-title">Add Department</h5>
             <button
               type="button"
               class="btn-close"
@@ -1083,45 +1165,17 @@
           </div>
           <div class="modal-body">
             <form class="row g-3">
-              <div class="col-6">
-                <label class="form-label text-muted">Nationality</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Indian"
-                />
+              <div class="col-12">
+                <label class="form-label text-muted">Department Name</label>
+                <input type="text" class="form-control form-control-lg" />
               </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Religion</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Hindu"
-                />
+              <div class="col-sm-6">
+                <label class="form-label text-muted">Department Head</label>
+                <input type="text" class="form-control form-control-lg" />
               </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Marital Status</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="Married"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Passport No</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="5468953210"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Emergency Contact</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="7468953210"
-                />
+              <div class="col-sm-6">
+                <label class="form-label text-muted">Employee UnderWork</label>
+                <input type="text" class="form-control form-control-lg" />
               </div>
             </form>
           </div>
@@ -1131,26 +1185,27 @@
               class="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              Cancel
+              Done
             </button>
-            <button type="button" class="btn btn-primary">
-              Update Details
-            </button>
+            <button type="submit" class="btn btn-primary">Add</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Bank information-->
-    <div class="modal fade" id="BankInfo" tabindex="-1" aria-hidden="true">
+    <!-- Edit Department-->
+    <div
+      class="modal fade"
+      id="editdepartments"
+      tabindex="-1"
+      aria-hidden="true"
+    >
       <div
-        class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"
+        class="modal-dialog modal-dialog-centered modal-md modal-dialog-scrollable"
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title fw-bold" id="edit2Label">
-              Bank information
-            </h5>
+            <h5 class="modal-title">Edit Department</h5>
             <button
               type="button"
               class="btn-close"
@@ -1160,44 +1215,30 @@
           </div>
           <div class="modal-body">
             <form class="row g-3">
-              <div class="col-6">
-                <label class="form-label text-muted">Bank Name</label>
+              <div class="col-12">
+                <label class="form-label text-muted">Department Name</label>
                 <input
                   type="text"
                   class="form-control form-control-lg"
-                  value="Kotak"
+                  value="Housekeeping Staff"
                 />
               </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Account No.</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="5436874596325486"
-                />
+              <div class="col-sm-6">
+                <label class="form-label text-muted">Department Head</label>
+                <select class="form-select form-control-lg">
+                  <option selected>Joan Dyer</option>
+                  <option value="1">Ryan Randall</option>
+                  <option value="2">Phil Glover</option>
+                  <option value="3">Victor Rampling</option>
+                  <option value="4">Sally Graham</option>
+                </select>
               </div>
-              <div class="col-6">
-                <label class="form-label text-muted">IFSC Code</label>
+              <div class="col-sm-6">
+                <label class="form-label text-muted">Employee UnderWork</label>
                 <input
                   type="text"
                   class="form-control form-control-lg"
-                  value="Kotak000021"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">Pan No</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="ACQPF6584L"
-                />
-              </div>
-              <div class="col-6">
-                <label class="form-label text-muted">UPI Id</label>
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  value="454812kotak@upi"
+                  value="40"
                 />
               </div>
             </form>
@@ -1208,13 +1249,203 @@
               class="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              Cancel
+              Done
             </button>
-            <button type="button" class="btn btn-primary">
-              Update Details
-            </button>
+            <button type="submit" class="btn btn-primary">Save</button>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Department user list-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="UserList">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Department User List</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body custom_scroll">
+        <ul
+          class="list-group list-group-flush user-list mb-0 custom_scroll ps-2"
+          role="tablist"
+        >
+          <li class="list-group-item b-dashed px-0 py-3">
+            <a href="javascript:void(0);" class="d-flex">
+              <img
+                class="avatar rounded-circle"
+                src="assets/images/xs/avatar1.jpg"
+                alt=""
+              />
+              <div class="flex-fill ms-3">
+                <h6 class="d-flex justify-content-between mb-0">
+                  <span>Stephen McLean</span>
+                </h6>
+                <span class="text-muted small">Web Desiger</span>
+              </div>
+            </a>
+          </li>
+          <li class="list-group-item b-dashed px-0 py-3">
+            <a href="javascript:void(0);" class="d-flex">
+              <div class="avatar rounded-circle no-thumbnail">FG</div>
+              <div class="flex-fill ms-3">
+                <h6 class="d-flex justify-content-between mb-0">
+                  <span>Friends Group</span>
+                </h6>
+                <span class="text-muted small">Web Developemnt</span>
+              </div>
+            </a>
+          </li>
+          <li class="list-group-item b-dashed px-0 py-3">
+            <a href="javascript:void(0);" class="d-flex">
+              <img
+                class="avatar rounded-circle"
+                src="assets/images/xs/avatar3.jpg"
+                alt=""
+              />
+              <div class="flex-fill ms-3">
+                <h6 class="d-flex justify-content-between mb-0">
+                  <span>Gordon Butler</span>
+                </h6>
+                <span class="text-muted small">Digitel marketing</span>
+              </div>
+            </a>
+          </li>
+          <li class="list-group-item b-dashed px-0 py-3">
+            <a href="javascript:void(0);" class="d-flex active">
+              <img
+                class="avatar rounded-circle"
+                src="assets/images/xs/avatar4.jpg"
+                alt=""
+              />
+              <div class="flex-fill ms-3">
+                <h6 class="d-flex justify-content-between mb-0">
+                  <span>Barbara Kelly</span>
+                </h6>
+                <span class="text-muted small">Web Desiger</span>
+              </div>
+            </a>
+          </li>
+          <li class="list-group-item b-dashed px-0 py-3">
+            <a href="javascript:void(0);" class="d-flex">
+              <img
+                class="avatar rounded-circle"
+                src="assets/images/xs/avatar5.jpg"
+                alt=""
+              />
+              <div class="flex-fill ms-3">
+                <h6 class="d-flex justify-content-between mb-0">
+                  <span>Robert Hammer</span>
+                </h6>
+                <span class="text-muted small">Web Desiger</span>
+              </div>
+            </a>
+          </li>
+          <li class="list-group-item b-dashed px-0 py-3">
+            <a href="javascript:void(0);" class="d-flex">
+              <img
+                class="avatar rounded-circle"
+                src="assets/images/xs/avatar6.jpg"
+                alt=""
+              />
+              <div class="flex-fill ms-3">
+                <h6 class="d-flex justify-content-between mb-0">
+                  <span>Gordon Butler</span>
+                </h6>
+                <span class="text-muted small">Web Developemnt</span>
+              </div>
+            </a>
+          </li>
+          <li class="list-group-item b-dashed px-0 py-3">
+            <a href="javascript:void(0);" class="d-flex">
+              <img
+                class="avatar rounded-circle"
+                src="assets/images/xs/avatar7.jpg"
+                alt=""
+              />
+              <div class="flex-fill ms-3">
+                <h6 class="d-flex justify-content-between mb-0">
+                  <span>Rose Rivera</span>
+                </h6>
+                <span class="text-muted small">Web Desiger</span>
+              </div>
+            </a>
+          </li>
+          <li class="list-group-item b-dashed px-0 py-3">
+            <a href="javascript:void(0);" class="d-flex">
+              <img
+                class="avatar rounded-circle"
+                src="assets/images/xs/avatar1.jpg"
+                alt=""
+              />
+              <div class="flex-fill ms-3">
+                <h6 class="d-flex justify-content-between mb-0">
+                  <span>Stephen McLean</span>
+                </h6>
+                <span class="text-muted small">Web Developemnt</span>
+              </div>
+            </a>
+          </li>
+          <li class="list-group-item b-dashed px-0 py-3">
+            <a href="javascript:void(0);" class="d-flex">
+              <div class="avatar rounded-circle no-thumbnail">RH</div>
+              <div class="flex-fill ms-3">
+                <h6 class="d-flex justify-content-between mb-0">
+                  <span>Robert Hammer</span>
+                </h6>
+                <span class="text-muted small">Angular Housekeeping Staff</span>
+              </div>
+            </a>
+          </li>
+          <li class="list-group-item b-dashed px-0 py-3">
+            <a href="javascript:void(0);" class="d-flex">
+              <img
+                class="avatar rounded-circle"
+                src="assets/images/xs/avatar3.jpg"
+                alt=""
+              />
+              <div class="flex-fill ms-3">
+                <h6 class="d-flex justify-content-between mb-0">
+                  <span>Gordon Butler</span>
+                </h6>
+                <span class="text-muted small">Web Desiger</span>
+              </div>
+            </a>
+          </li>
+          <li class="list-group-item b-dashed px-0 py-3">
+            <a href="javascript:void(0);" class="d-flex">
+              <img
+                class="avatar rounded-circle"
+                src="assets/images/xs/avatar4.jpg"
+                alt=""
+              />
+              <div class="flex-fill ms-3">
+                <h6 class="d-flex justify-content-between mb-0">
+                  <span>Barbara Kelly</span>
+                </h6>
+                <span class="text-muted small">Sales Lead</span>
+              </div>
+            </a>
+          </li>
+          <li class="list-group-item b-dashed px-0 py-3">
+            <a href="javascript:void(0);" class="d-flex">
+              <img
+                class="avatar rounded-circle"
+                src="assets/images/xs/avatar5.jpg"
+                alt=""
+              />
+              <div class="flex-fill ms-3">
+                <h6 class="d-flex justify-content-between mb-0">
+                  <span>Robert Hammer</span>
+                </h6>
+                <span class="text-muted small">SEO</span>
+              </div>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -1397,10 +1628,21 @@
 
     <!--[ hotelair template vender js ]-->
     <script src="assets/bundles/libscripts.bundle.js"></script>
+    <script src="assets/bundles/dataTables.bundle.js"></script>
 
     <!-- Template page js -->
     <script src="assets/js/main.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#myProjectTable").addClass("nowrap").dataTable({
+          responsive: true,
+          columnDefs: [
+            //{ targets: [-1, -3], className: 'dt-body-right' }
+          ],
+        });
+      });
+    </script>
   </body>
 
-  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employee-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:52 GMT -->
+  <!-- Mirrored from pixelwibes.in/templates/hotelair/html/employees-departments.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Aug 2024 13:32:00 GMT -->
 </html>

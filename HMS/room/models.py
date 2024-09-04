@@ -164,7 +164,7 @@ class Payment(models.Model):
     payment_mode = models.CharField(max_length=100, choices=PAYMENT_MODE)
     amount = models.FloatField()
     payment_status = models.CharField(max_length=50, choices=PAYMENT_STATUS)
-    date = models.DateField(null=True, blank=True)
+    date = models.DateField(auto_now=True,null=True, blank=True)
     
     
     

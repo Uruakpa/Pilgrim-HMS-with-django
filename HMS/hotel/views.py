@@ -316,22 +316,23 @@ def home(request):
         role = str(request.user.groups.all()[0])
     else:
         return HttpResponseForbidden("lolllzzzzz")
-    if role == "accounts":
+    if role != "guest":
         return redirect("dashboard", pk=request.user.id)
-    elif role  == "front desk":
-        return redirect("front-desk", pk=request.user.id)
     else:
-        return redirect("guest-profile", pk=request.user.id)
-
-#front desk
+        return redirect("guest-profile", pk=request.user.id) 
+    
+#admin
 @login_required(login_url='login')
-def front_desk(request, pk):
+def admin_page(request, pk):
     role = str(request.user.groups.all()[0])
     path = role + "/"
-    
+    today = timezone.now().date()
+    reserve = ReservationDetails.objects.filter(reservation_date=today).count()
+
     user = User.objects.get(id=pk)
-    context = {"role":role, "user":user}
-    return render(request, path + "index.html", context)
+    context = {"role":role, "reserve":reserve}
+    return render(request, path + "index_Admin.html", context)
+    
 @login_required(login_url='login')
 def events(request):
     role = str(request.user.groups.all()[0])
