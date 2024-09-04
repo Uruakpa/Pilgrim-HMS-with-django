@@ -135,6 +135,7 @@ class ContactDetails(models.Model):
     city = models.CharField(max_length=50, default='')
     zipcode = models.CharField(max_length=50, default='')
     address = models.TextField()
+
     
 class IdentityDetails(models.Model):
     
@@ -163,6 +164,9 @@ class Payment(models.Model):
     payment_mode = models.CharField(max_length=100, choices=PAYMENT_MODE)
     amount = models.FloatField()
     payment_status = models.CharField(max_length=50, choices=PAYMENT_STATUS)
+    date = models.DateField(null=True, blank=True)
+    
+    
     
 class AdditionalPayment(models.Model):
     title=models.CharField(max_length=255)
