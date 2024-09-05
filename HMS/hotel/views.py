@@ -215,7 +215,7 @@ def checkin_payment(request,pk):
     context ={
         "role":role
     }
-    return render(request, path + "index.html", context)
+    return render(request, path + "check.html", context)
 
 @login_required(login_url='login')
 def reservations(request, pk):
