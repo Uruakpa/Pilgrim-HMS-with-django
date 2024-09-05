@@ -35,14 +35,22 @@ X-Empire - Room Booking List
                                         {% for reservations  in reservation %}
                                         <tr>
                                            <td>
-                                               Frank Baker
+                                               {{reservations.guest.first_name}} {{reservations.guest.last_name}}
                                            </td>
-                                           <td>Single</td>
-                                           <td>12/03/2021</td>
-                                           <td>14/03/2021</td>
-                                           <td>0.00</td>
-                                           <td>$230</td>
-                                           <td><span class="badge text-bg-warning">Pending</span></td>
+                                           <td>
+                                            {{reservations.room.roomType}}
+                                           </td>
+                                           <td>{{reservations.check_in}}</td>
+                                           <td>
+                                            {{reservations.check_out}}
+                                           </td>
+                                           <td>{{reservations.payment_det.amount}}</td>
+                                           <td>
+                                        &#8358 {{reservations.payable_amount}}    
+                                        </td>
+                                           <td><span class="badge text-bg-warning">
+                                            {{reservations.payment_det.payment_status}}
+                                           </span></td>
                                         </tr>
                                         {% endfor %}
                                        
