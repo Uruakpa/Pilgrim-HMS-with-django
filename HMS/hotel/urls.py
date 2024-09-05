@@ -41,4 +41,5 @@ urlpatterns = [
     # path('admin-page/<str:pk>/', admin_page, name="admin-page"),
     path('checkin/<int:pk>/', checkin_out, name="checkin"),
     # path('hotel/<int:pk>/', checkin_out, name="h"),
+    
 ]
