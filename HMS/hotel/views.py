@@ -209,7 +209,13 @@ def room_booking(request, pk):
 
 @login_required
 def checkin_payment(request,pk):
-    role = str(request.user)
+    role = str(request.user.groups.all()[0])
+    path = role + '/'
+
+    context ={
+        "role":role
+    }
+    return render(request, path + "index.html", context)
 
 @login_required(login_url='login')
 def reservations(request, pk):
