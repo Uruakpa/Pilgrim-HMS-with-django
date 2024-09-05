@@ -215,7 +215,7 @@ def checkin_payment(request,pk):
     context ={
         "role":role
     }
-    return render(request, path + "index.html", context)
+    return render(request, path + "checkin-payment.html", context)
 
 @login_required(login_url='login')
 def reservations(request, pk):
@@ -245,7 +245,8 @@ def room_status(request, pk):
     role = str(request.user.groups.all()[0])
     path = role + "/"
     user = User.objects.get(id=pk)
-    context = {"user":user, "role":role, }
+    rooms = Rooms.objects.all()
+    context = {"user":user, "role":role, "rooms":rooms}
     return render(request, path + "room-status.html", context)
 
 @login_required(login_url='login')

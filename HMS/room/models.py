@@ -83,9 +83,14 @@ class RoomType(models.Model):
         return self.name
 
 class Rooms(models.Model):
+    STATUS = (
+        ('Available', 'Available'),
+        ('Booked', 'Booked'),
+    )
     room_number = models.IntegerField(primary_key=True)
     roomType = models.ForeignKey(RoomType, on_delete=models.CASCADE)
     roomPrice = models.FloatField()
+    status = models.CharField(max_length=50, choices=STATUS, null=True, blank=True)
     
     def __str__(self):
         return str(f"Room {self.room_number}")    
