@@ -55,27 +55,27 @@
                                     <span class="mx-3">Accounts</span>
                                 </a>
                                  <ul id="Hotel(Admin).html" class="collapse list-unstyled">
-                                        <li><a href=" {% url 'Financial' user.id %} "aria-label="" >Financial Year</a></li>
-                                        <li><a href="{% url 'Financial_ending' user.id %}" aria-label="" >Financial Year Ending</a></li>
-                                        <li><a href="{% url 'chart_of_account' user.id %} "aria-label="" >Chart of Account</a></li>
-                                        <li><a href="{% url 'opening_balance' user.id %}" aria-label="" >Opening Balance</a></li>
-                                        <li><a href="{% url 'debit_voucher' user.id %}" aria-label="" >Debit Voucher</a></li>
-                                        <li><a href="{% url 'credit_voucher' user.id %} " aria-label="" >Credit Voucher</a></li>
-                                        <li><a href="{% url 'contra_voucher' user.id %} " aria-label="" >Contra Voucher</a></li>
-                                        <li><a href="{% url 'journal_voucher' user.id %} " aria-label="" >Journal Voucher</a></li>
-                                        <li><a href="{% url 'voucher_approval' user.id %} " aria-label="" >Voucher Approval</a></li>
+                                        <li><a href="{% url 'Financial' user.id %} "aria-label="Financial Year" >Financial Year</a></li>
+                                        <li><a href="{% url 'Financial_ending' user.id %}" aria-label="Financial Year Ending" >Financial Year Ending</a></li>
+                                        <li><a href="{% url 'chart_of_account' user.id %} "aria-label="Chart of Account" >Chart of Account</a></li>
+                                        <li><a href="{% url 'opening_balance' user.id %}" aria-label="Opening Balance" >Opening Balance</a></li>
+                                        <li><a href="{% url 'debit_voucher' user.id %}" aria-label="Debit Voucher" >Debit Voucher</a></li>
+                                        <li><a href="{% url 'credit_voucher' user.id %} " aria-label="Credit Voucher" >Credit Voucher</a></li>
+                                        <li><a href="{% url 'contra_voucher' user.id %} " aria-label="Contra Voucher" >Contra Voucher</a></li>
+                                        <li><a href="{% url 'journal_voucher' user.id %} " aria-label="Journal Voucher" >Journal Voucher</a></li>
+                                        <li><a href="{% url 'voucher_approval' user.id %} " aria-label="Voucher Approval" >Voucher Approval</a></li>
                                         <li>
                                         <a href="#AccountReport.html" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle" aria-label="Users">
                                          <span class="mx-3">Accounts Report</span>
                                          </a>
                                           <ul class="collapse list-unstyled" id="AccountReport.html">
-                                          <li><a  href="another-page.html" aria-label="Booking List">Voucher Report</a></li>
-                                          <li><a  href="another-page.html" aria-label="Booking List">Cash Book</a></li>
-                                          <li><a  href="another-page.html" aria-label="Booking List">General Ledger</a></li>
-                                          <li><a  href="another-page.html" aria-label="Booking List">Trial Balance</a></li>
-                                          <li><a  href="another-page.html" aria-label="Booking List">Profit Loss</a></li>
-                                          <li><a  href="another-page.html" aria-label="Booking List">Coa Print</a></li>
-                                          <li><a  href="another-page.html" aria-label="Booking List">Balance Sheet</a></li>
+                                          <li><a  href="{% url 'voucher_report' user.id %}" aria-label="Voucher Report">Voucher Report</a></li>
+                                          <li><a  href="{% url 'cash_book' user.id %}" aria-label="Cash Book">Cash Book</a></li>
+                                          <li><a  href="{% url 'general_ledger' user.id %}" aria-label="General Ledger">General Ledger</a></li>
+                                          <li><a  href="{% url 'trial_balance' user.id %}" aria-label="Trial Balance">Trial Balance</a></li>
+                                          <li><a  href="{% url 'profit_loss' user.id %}" aria-label="Profit Loss">Profit Loss</a></li>
+                                          <li><a  href="{% url 'coa_print' user.id %}" aria-label="Coa Print">Coa Print</a></li>
+                                          <li><a  href="{% url 'balance_sheet' user.id %}" aria-label="Balance Sheet">Balance Sheet</a></li>
                                     
                                          </ul>
                                         </li>

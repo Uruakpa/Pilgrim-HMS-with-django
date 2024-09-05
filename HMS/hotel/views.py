@@ -375,6 +375,16 @@ def contra_voucher(request, pk):
     context = {"user":user, "role":role}
     return render(request, path + "contra_voucher.html", context)
 
+
+@login_required(login_url='login')
+def journal_voucher(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "journal_voucher.html", context)
+
 @login_required(login_url='login')
 def voucher_approval(request, pk):
     role = str(request.user.groups.all()[0])
@@ -386,13 +396,74 @@ def voucher_approval(request, pk):
 
 
 @login_required(login_url='login')
-def journal_voucher(request, pk):
+def voucher_report(request, pk):
     role = str(request.user.groups.all()[0])
     path = role + "/"
     
     user = User.objects.get(id=pk)
     context = {"user":user, "role":role}
-    return render(request, path + "journal_voucher.html", context)
+    return render(request, path + "voucher_report.html", context)
+
+
+@login_required(login_url='login')
+def cash_book(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "cash_book.html", context)
+
+@login_required(login_url='login')
+def general_ledger(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "general_ledger.html", context)
+
+
+@login_required(login_url='login')
+def trial_balance(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "trial_balance.html", context)
+
+
+@login_required(login_url='login')
+def profit_loss(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "profit_loss.html", context)
+
+
+@login_required(login_url='login')
+def coa_print(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "coa_print.html", context)
+
+
+@login_required(login_url='login')
+def balance_sheet(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "balance_sheet.html", context)
+
+
 
 @login_required(login_url='login')
 def purchase_report(request, pk):
