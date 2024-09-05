@@ -77,51 +77,7 @@ X-Empire - Check In/Out
 							</div>
 						</div>
 				  	</div>
-					<div class="col-md-12">
-						<div class="card">
-							<div class="card-header">
-								<h6 class="card-title">Billing Details</h6>
-							</div>
-							<div class="card-body">
-								<div class="table-responsive">
-									<table class="table table-sm table-bordered mb-0">
-									  <tbody>
-										<tr>
-										  <th scope="row">Room Rent Amt</th>
-										  <td>
-											N {{reservation.payment_det.amount}}
-										  </td>
-										</tr>
-										<tr>
-										  <th scope="row">Discount Amt</th>
-										  <td>$0</td>
-										</tr>
-										<tr>
-										  <th scope="row">Service Charge Amt</th>
-										  <td>$56</td>
-										</tr>
-										<tr>
-											<th scope="row">Total Room Rent Amt</th>
-											<td>$856</td>
-										</tr>
-										<tr>
-											<th scope="row">Room Amt With Tax</th>
-											<td>$972</td>
-										</tr>
-										<tr>
-											<th scope="row">Advance Amt</th>
-											<td>$0</td>
-										</tr>
-										<tr>
-											<th scope="row">Payable Rent Amt</th>
-											<td>$972</td>
-										</tr>
-									  </tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-				  	</div>
+					
 					<div class="col-md-12">
 						<div class="card">
 							<div class="card-header">
@@ -135,28 +91,30 @@ X-Empire - Check In/Out
 												<th>Room No.</th>
 												<th>Date</th>
 												<th>Room Type</th>
-												<th>Guest Details</th>
 												<th class="text-center">Room Rent Details</th>
-												<th>Tax Details</th>
-												<th>Total Amount</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
 												<td rowspan="2">
-													<strong class="d-block">102</strong>
-													<span>Single Room</span>
+													<strong class="d-block">
+														{{reservation.room.room_number}}
+													</strong>
+													{% comment %} <span>
+														{{reservation.room.roomType}}
+													</span> {% endcomment %}
 												</td>
 												<td rowspan="2">
 													<div>
-														23rd Mar 0300 to<br>
-														25th Mar 0300 
+														{{reservation.check_in}} to<br>
+														{{reservation.check_out}}
 													</div>
 												</td>
-												<td rowspan="2">Single Room</td>
-												<td>
-													<div class="text-muted">Adults: 1 </div>
+												<td rowspan="2">
+														{{reservation.room.roomType}}
+
 												</td>
+												
 												<td rowspan="2">
 													<table class="table table-bordered">
 														<thead>
@@ -165,44 +123,37 @@ X-Empire - Check In/Out
 																<th>From Date</th>
 																<th>To Date</th>
 																<th>NoD</th>
-																<th>($) Rent/ Day</th>
-																<th>($) Rent Discount</th>
-																<th>($) Tot. Rent</th>
+																<th>&#8358 RM Price/ Day</th>
+																<th>&#8358 Rent Discount</th>
+																<th>&#8358 Tot. Rent</th>
 															</tr>
 														</thead>
 														<tbody>
 															<tr>
 																<td>1</td>
-																<td>2023-03-23</td>
-																<td>2023-03-25</td>
-																<td>2</td>
-																<td>1600</td>
+																<td>
+																	{{reservation.check_in}}
+																</td>
+																<td>
+																	{{reservation.check_out}}
+																</td>
+																<td>
+																	{{reservation.number_of_days}}
+																</td>
+																<td>
+																	{{reservation.room.roomPrice}}
+																</td>
 																<td>0</td>
-																<td>2560</td>
+																<td>
+																	{{reservation.total_rent}}
+																</td>
 															</tr>
 														</tbody>
 													</table>
 												</td>
-												<td>
-													<div class="text-muted">Tax Details:</div>
-													<div>(RST3.00% )76.8</div>
-													<div>(GST4.00% )102.4</div>
-													<div>(DST4.00% )102.4</div>
-													<div>(MSL3.50% )89.6</div>
-												</td>
-												<td rowspan="2">2931.2</td>
+												
 											</tr>
-											<tr>
-												<td>
-													<div class="text-muted">Children: 0 </div>
-												</td>
-												<td>
-													<div class="text-muted">Subtotal:</div>
-													<div>2560</div>
-													<div class="text-muted">Total Tax:</div>
-													<div>371.2</div>
-												</td>
-											</tr>
+											
 										</tbody>
 									</table>
 								</div>
@@ -212,7 +163,7 @@ X-Empire - Check In/Out
 					<div class="col-md-12">
 						<div class="card">
 							<div class="card-header">
-								<h6 class="card-title">Additional Charges</h6>
+								<h6 class="card-title">Billing Summary</h6>
 							</div>
 							<div class="card-body">
 								<div class="table-responsive">
@@ -231,69 +182,26 @@ X-Empire - Check In/Out
 									<h6 class="card-title mb-3">Payments Details</h6>
 									<table class="table table-sm table-bordered mb-0">
 										<tr>
-										  <th scope="row">Net Payable Amt</th>
-										  <td>$3110.4</td>
+										  <th scope="row">
+											Advanced Payment</th>
+										  <td>
+											&#8358 
+											{{reservation.payment_det.amount}}
+										  </td>
 										</tr>
 										<tr>
 											<th scope="row">Special Discount Amtt</th>
-											<td>$0.0</td>
-										</tr>
-										<tr>
-											<th scope="row">Payable Amt</th>
-											<td>$3110.4</td>
-										</tr>
-									  </tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-				  	</div>
-					<div class="col-md-12">
-						<div class="card">
-							<div class="card-header">
-								<h6 class="card-title">Special Discount</h6>
-							</div>
-							<div class="card-body">
-								<div class="table-responsive">
-									<table class="table table-sm table-bordered mb-0">
-									  <tbody>
-										<tr>
-										  <th scope="row">Discount Type</th>
-										  	<td>
-												<select class="form-select">
-													<option selected>Choose Discount</option>
-													<option value="1">Friends</option>
-													<option value="2">Regular Customer</option>
-													<option value="3">MD Guest</option>
-													<option value="4">Allocation</option>
-													<option value="5">Business Seminar</option>
-													<option value="6">Wedding</option>
-												</select>
+											<td>
+												&#8358
+												0.0
 											</td>
 										</tr>
 										<tr>
-											<th scope="row">Discount Amt</th>
-											<td><input type="number" class="form-control" placeholder="Discount Amt"></td>
-										</tr>
-										<tr>
-										  <th scope="row">Remarks</th>
-										  <td><textarea class="form-control"></textarea></td>
-										</tr>
-									</table>
-									<hr>
-									<h6 class="card-title mb-3">Balance Details</h6>
-									<table class="table table-sm table-bordered mb-0">
-										<tr>
-										  <th scope="row">Remain Amt</th>
-										  <td>$3110.4</td>
-										</tr>
-										<tr>
-											<th scope="row">Collected Amt</th>
-											<td>$0.0</td>
-										</tr>
-										<tr>
-											<th scope="row">Change Amt</th>
-											<td>$3110.4</td>
+											<th scope="row">Payable Amt</th>
+											<td>
+												&#8358
+												3110.4
+											</td>
 										</tr>
 									  </tbody>
 									</table>
@@ -301,6 +209,7 @@ X-Empire - Check In/Out
 							</div>
 						</div>
 				  	</div>
+					
 					<div class="col-sm-12 text-end">
 						<a href="checkin-payment.html" class="btn btn-primary">Checkout</a>
 					</div>
