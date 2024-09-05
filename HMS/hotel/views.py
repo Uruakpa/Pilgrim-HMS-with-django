@@ -105,8 +105,8 @@ def room_booking(request, pk):
         fcheckin = request.POST.get('checkin')
         fcheckout = request.POST.get('checkout')
         farrivalfrom = request.POST.get('arrivalfrom')
-        fpurpose = request.POST.get('purpose')
-        fremarks = request.POST.get('remarks')
+        # fpurpose = request.POST.get('purpose')
+        # fremarks = request.POST.get('remarks')
         froomtypeid = request.POST.get('roomtype')
         froomnum = request.POST.get('roomnum')
         fadults = request.POST.get('adults')
@@ -139,8 +139,8 @@ def room_booking(request, pk):
             check_in = fcheckin,
             check_out = fcheckout,
             arrival_from = farrivalfrom,
-            purpose = fpurpose,
-            remarks = fremarks,
+            # purpose = fpurpose,
+            # remarks = fremarks,
         )
         reserve.room = room_instance
         reserve.save()
@@ -206,6 +206,10 @@ def room_booking(request, pk):
         
         }
     return render(request, path + "room-booking.html", context)
+
+@login_required
+def checkin_payment(request,pk):
+    role = str(request.user)
 
 @login_required(login_url='login')
 def reservations(request, pk):
@@ -324,22 +328,7 @@ def home(request):
     else:
         return redirect("guest-profile", pk=request.user.id) 
     
-#admin
-<<<<<<< HEAD
-# @login_required(login_url='login')
-# def admin_page(request, pk):
-#     role = str(request.user.groups.all()[0])
-#     path = role + "/"
-#     today = timezone.now().date()
-#     reserve = ReservationDetails.objects.filter(reservation_date=today).count()
 
-#     user = User.objects.get(id=pk)
-#     context = {"role":role, "reserve":reserve}
-#     return render(request, path + "index_Admin.html", context)
-    
-=======
-
->>>>>>> 6e8263aa85ef6c260f6d064409b55173b7cb26b8
 @login_required(login_url='login')
 def events(request):
     role = str(request.user.groups.all()[0])

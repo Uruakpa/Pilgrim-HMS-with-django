@@ -76,6 +76,7 @@ class RoomServices(models.Model):
 
     
 class RoomType(models.Model):
+    image = models.ImageField(upload_to='media/roomimages', null=True, blank=True)
     name = models.CharField(max_length=50)
     
     def __str__(self):
@@ -119,6 +120,7 @@ class GuestDetails(models.Model):
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES, null=True, blank=True)
     dob = models.DateField()
     nationality = models.CharField(max_length=50, null=True, blank=True)
+    contact_det = models.ForeignKey('ContactDetails', on_delete=models.CASCADE, null=True, blank=True)
     
     
 class ContactDetails(models.Model):
@@ -179,13 +181,15 @@ class ReservationDetails(models.Model):
     check_in = models.DateField()
     check_out = models.DateField()
     arrival_from = models.CharField(max_length=255)
-    purpose = models.TextField()
-    remarks = models.TextField()
+    # purpose = models.TextField()
+    # remarks = models.TextField()
     reservation_date = models.DateField(auto_now=True)
     date_edited = models.DateTimeField(auto_now=True)
+    room_det = models.ForeignKey(RoomDetails, on_delete=models.CASCADE, null=True, blank=True)
     room = models.ForeignKey(Rooms, on_delete=models.CASCADE, null=True, blank=True)
     guest = models.ForeignKey(GuestDetails, on_delete=models.CASCADE, null=True, blank=True)
     payment_det = models.ForeignKey(Payment, on_delete=models.CASCADE, null=True, blank=True)
+    # additional_payments = models.ForeignKey()
     
     class Meta:
         ordering = ['-reservation_date', '-date_edited']
