@@ -91,6 +91,7 @@ class Rooms(models.Model):
     roomType = models.ForeignKey(RoomType, on_delete=models.CASCADE)
     roomPrice = models.FloatField()
     status = models.CharField(max_length=50, choices=STATUS, null=True, blank=True)
+    checkout = models.DateField(null=True, blank=True)
     
     def __str__(self):
         return str(f"Room {self.room_number}")    
@@ -207,3 +208,6 @@ class ReservationDetails(models.Model):
     
     def total_rent(self):
         return (self.room.roomPrice * ReservationDetails.number_of_days(self))
+    
+    def payable_amount(self):
+        return self.total_rent() - self.payment_det.amount
