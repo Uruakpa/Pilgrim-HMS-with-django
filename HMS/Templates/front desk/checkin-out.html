@@ -55,7 +55,9 @@ X-Empire - Check In/Out
 										</tr> {% endcomment %}
 										<tr>
 										  <th scope="row">Email ID</th>
-										  <td>joneliya@gmail.com</td>
+										  <td>
+											{{reservation.guest.contact_det.email}}
+										  </td>
 										</tr>
 										<tr>
 											<th scope="row">Mobile No</th>
@@ -65,7 +67,9 @@ X-Empire - Check In/Out
 										</tr>
 										<tr>
 											<th scope="row">Address</th>
-											<td>Low FG, Fat Road</td>
+											<td>
+												{{reservation.guest.contact_det.address}}
+											</td>
 										</tr>
 										<tr>
 											<th scope="row">Time Format</th>
@@ -124,8 +128,8 @@ X-Empire - Check In/Out
 																<th>To Date</th>
 																<th>NoD</th>
 																<th>&#8358 RM Price/ Day</th>
-																<th>&#8358 Rent Discount</th>
-																<th>&#8358 Tot. Rent</th>
+																<th>&#8358 Discount</th>
+																<th>&#8358 Total</th>
 															</tr>
 														</thead>
 														<tbody>
@@ -153,6 +157,7 @@ X-Empire - Check In/Out
 												</td>
 												
 											</tr>
+
 											
 										</tbody>
 									</table>
