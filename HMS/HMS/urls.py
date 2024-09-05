@@ -24,35 +24,5 @@ from room.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("hotel.urls")),
-    path('login/', login_page, name="login"),
-    path('logout/', logout_user, name="logout"),
-    path('register/', register_page, name="register"),
-    
-    path('guests/', guests, name="guests"),
-    path('employees/', employees, name="employees"),
-    path('bookings/', bookings, name="bookings"),
-    path('rooms/', rooms, name="rooms"),
-    path('room-services/', room_services, name="room-services"),
-    path('refunds/', refunds, name="refunds"),
-
-    path('tasks/', tasks, name="tasks"),
-    path('current-room-services/', current_room_services,
-         name="current-room-services"),
-    path('request-refund/', request_refund, name="request-refund"),
-    path('add-room/', add_room, name="add-room"),
-
-    path('employee-profile/<str:pk>/', employee_details, name="employee-profile"),
-    path('employee-edit/<str:pk>/', employee_details_edit, name="employee-edit"),
-    path('employee-add/', add_employee, name="add-employee"),
-
-    path('guest-edit/<str:pk>', guest_edit, name="guest-edit"),
-    path('guest-profile/<str:pk>', guest_profile, name="guest-profile"),
-    path('room-profile/<str:id>/', room_profile, name="room-profile"),
-    path('room-edit/<str:pk>/', room_edit, name="room-edit"),
-
-    path('booking-make/', booking_make, name="booking-make"),
-
-
-    path('deleteBooking/<str:pk>/', deleteBooking, name="deleteBooking"),
-    path('completeTask/<str:pk>/', completeTask, name="completeTask"),
+    path('auth/', include("accounts.urls")),
 ]

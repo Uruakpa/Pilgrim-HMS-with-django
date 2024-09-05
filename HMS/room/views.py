@@ -104,43 +104,6 @@ def rooms(request):
     return render(request, path + "rooms.html", context)
 
 
-@login_required(login_url='login')
-def add_room(request):
-    # Check if the user belongs to any groups
-    if request.user.groups.exists():
-        role = str(request.user.groups.all()[0])
-    else:
-        # Handle the case where the user does not belong to any groups
-        return HttpResponseForbidden("You do not have the required permissions to add a room.")
-
-    path = role + "/"
-    # role = str(request.user.groups.all()[0])
-    # path = role + "/"
-
-    if request.method == "POST":
-        guest = None
-        if role == 'guest':
-            guest = request.user.guest
-        elif role == 'manager' or role == 'admin' or role == 'receptionist':
-            guest = request.user.employee
-
-        # announcement = Announcement(sender = sender, content = request.POST.get('textid'))
-        number = request.POST.get('number')
-        capacity = request.POST.get('capacity')
-        numberOfBeds = request.POST.get('beds')
-        roomType = request.POST.get('type')
-        price = request.POST.get('price')
-        print(capacity)
-        room = Room(number=number, capacity=capacity,
-                    numberOfBeds=numberOfBeds, roomType=roomType, price=price)
-
-        room.save()
-        return redirect('rooms')
-
-    context = {
-        "role": role
-    }
-    return render(request, "add-room.html", context)
 
 
 @login_required(login_url='login')

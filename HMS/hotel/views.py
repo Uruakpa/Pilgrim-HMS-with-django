@@ -105,8 +105,8 @@ def room_booking(request, pk):
         fcheckin = request.POST.get('checkin')
         fcheckout = request.POST.get('checkout')
         farrivalfrom = request.POST.get('arrivalfrom')
-        fpurpose = request.POST.get('purpose')
-        fremarks = request.POST.get('remarks')
+        # fpurpose = request.POST.get('purpose')
+        # fremarks = request.POST.get('remarks')
         froomtypeid = request.POST.get('roomtype')
         froomnum = request.POST.get('roomnum')
         fadults = request.POST.get('adults')
@@ -139,8 +139,8 @@ def room_booking(request, pk):
             check_in = fcheckin,
             check_out = fcheckout,
             arrival_from = farrivalfrom,
-            purpose = fpurpose,
-            remarks = fremarks,
+            # purpose = fpurpose,
+            # remarks = fremarks,
         )
         reserve.room = room_instance
         reserve.save()
@@ -207,6 +207,16 @@ def room_booking(request, pk):
         }
     return render(request, path + "room-booking.html", context)
 
+@login_required
+def checkin_payment(request,pk):
+    role = str(request.user.groups.all()[0])
+    path = role + '/'
+
+    context ={
+        "role":role
+    }
+    return render(request, path + "checkin-payment.html", context)
+
 @login_required(login_url='login')
 def reservations(request, pk):
     
@@ -235,7 +245,8 @@ def room_status(request, pk):
     role = str(request.user.groups.all()[0])
     path = role + "/"
     user = User.objects.get(id=pk)
-    context = {"user":user, "role":role, }
+    rooms = Rooms.objects.all()
+    context = {"user":user, "role":role, "rooms":rooms}
     return render(request, path + "room-status.html", context)
 
 @login_required(login_url='login')
@@ -320,11 +331,10 @@ def home(request):
     else:
         return HttpResponseForbidden("lolllzzzzz")
     if role != "guest":
-        return redirect("dashboard", pk=request.user.id)
+        return redirect("dashboard", pk=request.user.id) 
     else:
         return redirect("guest-profile", pk=request.user.id) 
     
-#admin
 
 @login_required(login_url='login')
 def events(request):
