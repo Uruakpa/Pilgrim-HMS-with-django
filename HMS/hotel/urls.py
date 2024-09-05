@@ -2,6 +2,7 @@ from django.urls import path
 from .views import *
 
 
+
 urlpatterns = [
     path('', index, name='index'),
     path('home/', home, name="home"),
@@ -36,11 +37,20 @@ urlpatterns = [
     path('booking-report/<str:pk>/', booking_report, name="booking-report"),
     path('stock-report/<str:pk>/', stuck_report, name="stock-report"),
     path('purchase-report/<str:pk>/', purchase_report, name="purchase-report"),
-    # path('transaction', transaction, name="purchase-report"),
-    # path('frontdesk/<str:pk>/', front_desk, name="front-desk"),
-    # path('admin-page/<str:pk>/', admin_page, name="admin-page"),
+    path('Financial/<str:pk>/', financial, name="Financial"),
+    path('Financial_ending/<str:pk>/', financial_ending, name="Financial_ending"),
+    path('chart_of_account/<str:pk>/', chart_of_account, name="chart_of_account"),
+    path('opening_balance/<str:pk>/', opening_balance, name="opening_balance"),
+    path('debit_voucher/<str:pk>/', debit_voucher, name="debit_voucher"),
+    path('credit_voucher/<str:pk>/', credit_voucher, name="credit_voucher"),
+    path('contra_voucher/<str:pk>/', contra_voucher, name="contra_voucher"),
+    path('journal_voucher/<str:pk>/', journal_voucher, name="journal_voucher"),
+    path('voucher_approval/<str:pk>/', voucher_approval, name="voucher_approval"),
     path('checkin/<int:pk>/', checkin_out, name="checkin"),
     path('checkout/<int:pk>/', checkin_payment, name="checkout"),
     # path('hotel/<int:pk>/', checkin_out, name="h"),
+    # path('transaction', transaction, name="purchase-report"),
+    # path('frontdesk/<str:pk>/', front_desk, name="front-desk"),
+    # path('admin-page/<str:pk>/', admin_page, name="admin-page"),
     
 ]

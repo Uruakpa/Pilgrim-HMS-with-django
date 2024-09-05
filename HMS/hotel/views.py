@@ -40,7 +40,6 @@ def accounts_page(request, pk):
 def index_page(request, pk):
     role = str(request.user.groups.all()[0])
     path = role + "/"
-    print(f'{role} rrrrrrrrrrrrrrrrrr')
     today = timezone.now().date()
     total_amount = Payment.objects.filter(date=today).aggregate(total=Sum("amount"))['total']
     if total_amount is None:
@@ -142,8 +141,11 @@ def room_booking(request, pk):
             # purpose = fpurpose,
             # remarks = fremarks,
         )
+        
         reserve.room = room_instance
         reserve.save()
+        room_instance.status = "Booked"
+        room_instance.save()
         roomdet = RoomDetails.objects.create(
             room_type = roomtype,
             roomNumber = room_instance,
@@ -151,6 +153,8 @@ def room_booking(request, pk):
             children = fchildren,
         )
         roomdet.save()
+        reserve.room_det = roomdet
+        reserve.save()
         guestdet = GuestDetails(
             phone_number = fnumber,
             title = ftitle,
@@ -177,6 +181,8 @@ def room_booking(request, pk):
             address = faddress
         )
         con_det.save()
+        guestdet.contact_det = con_det
+        guestdet.save()
         id_det = IdentityDetails.objects.create(
             id_type = fidtype,
             id_number = fidnumber,
@@ -191,6 +197,7 @@ def room_booking(request, pk):
         payment.save()
         reserve.payment_det = payment
         reserve.save()
+        
         # payment
         return redirect("checkin-out", pk=request.user.id)
     context = {
@@ -202,7 +209,7 @@ def room_booking(request, pk):
         # "payment":payment,
         "contact_details_instance":contact_details_instance,
         "identity_details_instance":identity_details_instance,
-        'rooms': json.dumps(rooms),
+        'rooms': json.dumps(list(rooms)),
         
         }
     return render(request, path + "room-booking.html", context)
@@ -215,7 +222,7 @@ def checkin_payment(request,pk):
     context ={
         "role":role
     }
-    return render(request, path + "checkin-payment.html", context)
+    return render(request, path + "check.html", context)
 
 @login_required(login_url='login')
 def reservations(request, pk):
@@ -245,8 +252,7 @@ def room_status(request, pk):
     role = str(request.user.groups.all()[0])
     path = role + "/"
     user = User.objects.get(id=pk)
-    rooms = Rooms.objects.all()
-    context = {"user":user, "role":role, "rooms":rooms}
+    context = {"user":user, "role":role, }
     return render(request, path + "room-status.html", context)
 
 @login_required(login_url='login')
@@ -302,6 +308,91 @@ def booking_report(request, pk):
     user = User.objects.get(id=pk)
     context = {"user":user, "role":role}
     return render(request, path + "booking-report.html", context)
+
+@login_required(login_url='login')
+def financial(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "Financial.html", context)
+
+@login_required(login_url='login')
+def financial_ending(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "Financial_ending.html", context)
+
+
+@login_required(login_url='login')
+def chart_of_account(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "chart_of_account.html", context)
+
+
+@login_required(login_url='login')
+def opening_balance(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "opening_balance.html", context)
+
+
+@login_required(login_url='login')
+def debit_voucher(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "debit_voucher.html", context)
+
+@login_required(login_url='login')
+def credit_voucher(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "credit_voucher.html", context)
+
+@login_required(login_url='login')
+def contra_voucher(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "contra_voucher.html", context)
+
+@login_required(login_url='login')
+def voucher_approval(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "voucher_approval.html", context)
+
+
+@login_required(login_url='login')
+def journal_voucher(request, pk):
+    role = str(request.user.groups.all()[0])
+    path = role + "/"
+    
+    user = User.objects.get(id=pk)
+    context = {"user":user, "role":role}
+    return render(request, path + "journal_voucher.html", context)
 
 @login_required(login_url='login')
 def purchase_report(request, pk):

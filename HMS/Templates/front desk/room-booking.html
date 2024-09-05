@@ -443,7 +443,8 @@
 				filteredRooms.forEach(room => {
 					const option = document.createElement('option');
 					option.value = room.room_number;
-					option.text = room.room_number;
+                                          
+					option.text = `${room.room_number} - ${room.status}`;
 					roomNumberSelect.appendChild(option);
 				});
 			});
