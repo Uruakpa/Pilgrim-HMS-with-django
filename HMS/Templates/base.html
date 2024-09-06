@@ -1,4 +1,4 @@
-g{% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,11 +15,12 @@ g{% load static %}
         <link rel="icon" type="image/png" sizes="32x32" href="/hotel main/pixelwibes.in/templates/hotelair/html/assets/images/favicon-32x32.png">
         <link rel="apple-touch-icon" sizes="180x180" href="/hotel main/pixelwibes.in/templates/hotelair/html/assets/images/apple-touch-icon.png">
     
-        <link rel="stylesheet" href="{% static "/css/dataTables.min.css" %}">
+        <link rel="stylesheet" href="{% static '/css/dataTables.min.css' %}" >
         
         <!--[ Template main css file ]-->
-        <link rel="stylesheet" href="{% static "/css/style.min.css" %}">
-        <link rel="stylesheet" href="{% static "/css/Admin.css" %}">
+        <link rel="stylesheet" href="{% static '/css/style.min.css' %}">
+		
+        <link rel="stylesheet" href="{% static '/css/Admin.css' %}">
 
         <title>
             {% block title %}
@@ -36,7 +37,7 @@ g{% load static %}
 		{% include "accounts_navbar.html" %}
 		{% elif role == 'front desk' %}
 		{% include "frontdesk_nav.html" %}
-		{% elif role == 'admin' %}
+		{% elif role == 'admin user' %}
 		{% include "admin_nav.html" %}
 		{% else %}
 		<p>
@@ -51,10 +52,10 @@ g{% load static %}
     
 	</main>
     <!--[ hotelair template vender js ]-->
-	<script src="{% static "/js/libscripts.bundle.js" %}"></script>
-    <script src="{% static "/js/apexcharts.bundle.js" %}"></script>
-	<script src="{% static "/js/dataTables.bundle.js" %}"></script>
-	<script src="{% static "/js/main_copy.js" %}"></script>
+	<script src="{% static '/js/libscripts.bundle.js' %}"></script>
+    <script src="{% static '/js/apexcharts.bundle.js' %}"></script>
+	<script src="{% static '/js/dataTables.bundle.js' %}"></script>
+	<script src="{% static '/js/main_copy.js' %}"></script>
     <script>
 		$(document).ready(function() {
 			var options = {

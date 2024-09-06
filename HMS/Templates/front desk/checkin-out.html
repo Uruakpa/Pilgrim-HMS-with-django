@@ -55,7 +55,9 @@ X-Empire - Check In/Out
 										</tr> {% endcomment %}
 										<tr>
 										  <th scope="row">Email ID</th>
-										  <td>joneliya@gmail.com</td>
+										  <td>
+											{{reservation.guest.contact_det.email}}
+										  </td>
 										</tr>
 										<tr>
 											<th scope="row">Mobile No</th>
@@ -65,12 +67,12 @@ X-Empire - Check In/Out
 										</tr>
 										<tr>
 											<th scope="row">Address</th>
-											<td>Low FG, Fat Road</td>
+											<td>
+												{{reservation.guest.contact_det.address}}
+											</td>
 										</tr>
-										<tr>
-											<th scope="row">Time Format</th>
-											<td>24HRS</td>
-										</tr>
+										
+										
 									  </tbody>
 									</table>
 								</div>
@@ -123,9 +125,9 @@ X-Empire - Check In/Out
 																<th>From Date</th>
 																<th>To Date</th>
 																<th>NoD</th>
-																<th>&#8358 Rent/ Day</th>
-																<th>&#8358 Rent Discount</th>
-																<th>&#8358 Tot. Rent</th>
+																<th>&#8358 RM Price/ Day</th>
+																<th>&#8358 Discount</th>
+																<th>&#8358 Total</th>
 															</tr>
 														</thead>
 														<tbody>
@@ -138,17 +140,22 @@ X-Empire - Check In/Out
 																	{{reservation.check_out}}
 																</td>
 																<td>
-																	{{reservation.reservation_date|length}}
+																	{{reservation.number_of_days}}
 																</td>
-																<td>1600</td>
+																<td>
+																	{{reservation.room.roomPrice}}
+																</td>
 																<td>0</td>
-																<td>2560</td>
+																<td>
+																	{{reservation.total_rent}}
+																</td>
 															</tr>
 														</tbody>
 													</table>
 												</td>
 												
 											</tr>
+
 											
 										</tbody>
 									</table>
@@ -178,16 +185,26 @@ X-Empire - Check In/Out
 									<h6 class="card-title mb-3">Payments Details</h6>
 									<table class="table table-sm table-bordered mb-0">
 										<tr>
-										  <th scope="row">Net Payable Amt</th>
-										  <td>$3110.4</td>
+										  <th scope="row">
+											Advanced Payment</th>
+										  <td>
+											&#8358 
+											{{reservation.payment_det.amount}}
+										  </td>
 										</tr>
 										<tr>
 											<th scope="row">Special Discount Amtt</th>
-											<td>$0.0</td>
+											<td>
+												&#8358
+												0.0
+											</td>
 										</tr>
 										<tr>
 											<th scope="row">Payable Amt</th>
-											<td>$3110.4</td>
+											<td>
+												&#8358
+												{{reservation.payable_amount}}
+											</td>
 										</tr>
 									  </tbody>
 									</table>
@@ -197,7 +214,7 @@ X-Empire - Check In/Out
 				  	</div>
 					
 					<div class="col-sm-12 text-end">
-						<a href="checkin-payment.html" class="btn btn-primary">Checkout</a>
+						<a href="" class="btn btn-primary">Checkout</a>
 					</div>
                 </div><!-- Row End -->
 			</div>
